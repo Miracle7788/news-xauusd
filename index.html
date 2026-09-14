@@ -1,0 +1,1404 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  html { color-scheme: light dark; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>Peta News XAUUSD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+
+<style>
+  :root {
+    --ground:      #f1f2f4;
+    --surface:     #ffffff;
+    --surface-alt: #f7f8f9;
+    --ink:         #15181d;
+    --ink-2:       #444b57;
+    --ink-3:       #6d7583;
+    --rule:        #d9dce1;
+    --rule-soft:   #e7e9ed;
+    --gold:        #9a6f16;
+    --gold-soft:   #f4ead3;
+    --risk:        #a52a1e;
+    --risk-soft:   #f7e3e0;
+    --warn:        #8f5a05;
+    --warn-soft:   #f7ecd8;
+    --calm:        #1a6459;
+    --calm-soft:   #dfeeea;
+    --shadow:      0 1px 2px rgba(21, 24, 29, .06), 0 8px 24px -18px rgba(21, 24, 29, .35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:      #131519;
+      --surface:     #1b1e24;
+      --surface-alt: #21252c;
+      --ink:         #e9eaee;
+      --ink-2:       #b3b9c4;
+      --ink-3:       #868d9a;
+      --rule:        #333943;
+      --rule-soft:   #272c34;
+      --gold:        #e0b252;
+      --gold-soft:   #3a2f16;
+      --risk:        #f08a7c;
+      --risk-soft:   #40201c;
+      --warn:        #e4ac52;
+      --warn-soft:   #3b2c12;
+      --calm:        #6fc9b6;
+      --calm-soft:   #17332e;
+      --shadow:      0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -18px rgba(0, 0, 0, .8);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:      #131519;
+    --surface:     #1b1e24;
+    --surface-alt: #21252c;
+    --ink:         #e9eaee;
+    --ink-2:       #b3b9c4;
+    --ink-3:       #868d9a;
+    --rule:        #333943;
+    --rule-soft:   #272c34;
+    --gold:        #e0b252;
+    --gold-soft:   #3a2f16;
+    --risk:        #f08a7c;
+    --risk-soft:   #40201c;
+    --warn:        #e4ac52;
+    --warn-soft:   #3b2c12;
+    --calm:        #6fc9b6;
+    --calm-soft:   #17332e;
+    --shadow:      0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -18px rgba(0, 0, 0, .8);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 40px 24px 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+
+  h1, h2, h3, .eyebrow, .chip, .mono, th, .tick {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .mono, td.num, .tick, .time {
+    font-family: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 22px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  h1 {
+    font-size: clamp(34px, 6vw, 54px);
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.02;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .standfirst {
+    margin: 0;
+    max-width: 62ch;
+    font-size: 18px;
+    color: var(--ink-2);
+  }
+
+  .readout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    align-items: baseline;
+    padding-top: 4px;
+  }
+
+  .readout div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .readout dt, .readout .k {
+    font-family: Archivo, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  .readout .v {
+    font-family: "IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .readout .v.gold { color: var(--gold); }
+
+  /* ---------- sections ---------- */
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  h2 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  h2 .h2-note {
+    font-family: "Source Serif 4", serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink-3);
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -.005em;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  p { margin: 0; max-width: 68ch; color: var(--ink-2); }
+
+  /* ---------- month rhythm ---------- */
+
+  .rhythm {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .rhythm > div {
+    background: var(--surface);
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .rhythm .wk {
+    font-family: Archivo, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  .rhythm ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    color: var(--ink-2);
+  }
+
+  .rhythm li::before {
+    content: "";
+    display: inline-block;
+    width: 6px; height: 6px;
+    margin-right: 8px;
+    vertical-align: 1px;
+    border-radius: 50%;
+    background: var(--ink-3);
+  }
+
+  .rhythm li.hi::before  { background: var(--risk); }
+  .rhythm li.hi          { color: var(--ink); font-weight: 500; }
+  .rhythm li.med::before { background: var(--warn); }
+
+  @media (max-width: 720px) {
+    .rhythm { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ---------- tables ---------- */
+
+  .scroll {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 640px;
+  }
+
+  thead th {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--surface-alt);
+    white-space: nowrap;
+  }
+
+  tbody td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--rule-soft);
+    color: var(--ink-2);
+    vertical-align: top;
+  }
+
+  tbody tr:last-child td { border-bottom: 0; }
+
+  td.ev {
+    color: var(--ink);
+    font-family: Archivo, sans-serif;
+    font-weight: 600;
+    font-size: 13.5px;
+    white-space: nowrap;
+  }
+
+  td .sub {
+    display: block;
+    font-family: "Source Serif 4", serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--ink-3);
+    white-space: normal;
+  }
+
+  .time {
+    font-size: 13.5px;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .time .alt {
+    display: block;
+    font-size: 11.5px;
+    color: var(--ink-3);
+  }
+
+  /* severity stripe on the row */
+  tbody tr.sev-hi  td:first-child { box-shadow: inset 3px 0 0 var(--risk); }
+  tbody tr.sev-med td:first-child { box-shadow: inset 3px 0 0 var(--warn); }
+  tbody tr.sev-lo  td:first-child { box-shadow: inset 3px 0 0 var(--rule); }
+
+  .chip {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .chip.hi  { background: var(--risk-soft); color: var(--risk); }
+  .chip.med { background: var(--warn-soft); color: var(--warn); }
+  .chip.lo  { background: var(--calm-soft); color: var(--calm); }
+
+  /* ---------- danger windows ---------- */
+
+  .danger {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+
+  .danger article {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--risk);
+    border-radius: 3px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .danger article.soft { border-left-color: var(--warn); }
+
+  .danger .win {
+    font-family: "IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .danger p { font-size: 13.5px; line-height: 1.5; }
+
+  /* ---------- chart ---------- */
+
+  .chartbox {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 18px 16px 12px;
+    box-shadow: var(--shadow);
+  }
+
+  .chartbox svg { width: 100%; height: auto; display: block; }
+
+  .caption {
+    font-size: 12.5px;
+    color: var(--ink-3);
+    margin-top: 8px;
+    max-width: none;
+  }
+
+  /* ---------- monthly recap ---------- */
+
+  td.mo {
+    font-family: Archivo, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  td.num {
+    font-size: 13.5px;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .dir {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .dir.up   { background: var(--calm-soft); color: var(--calm); }
+  .dir.down { background: var(--risk-soft); color: var(--risk); }
+  .dir.flat { background: var(--rule-soft); color: var(--ink-3); }
+
+  /* ---------- now panel ---------- */
+
+  .now {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--gold);
+    border-radius: 3px;
+    padding: 20px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: var(--shadow);
+  }
+
+  .now ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .now ol li {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+
+  .now ol li:last-child { border-bottom: 0; }
+
+  .now .when {
+    font-family: "IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  .now .what { font-size: 14px; color: var(--ink-2); }
+  .now .what strong { color: var(--ink); font-family: Archivo, sans-serif; font-size: 13.5px; }
+
+  @media (max-width: 560px) {
+    .now ol li { grid-template-columns: 1fr; gap: 2px; }
+  }
+
+  /* ---------- data cards ---------- */
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    align-items: center;
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+
+  .legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .mark {
+    font-style: normal;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 11px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  .mark.dn { background: var(--risk-soft); color: var(--risk); }
+  .mark.up { background: var(--calm-soft); color: var(--calm); }
+  .mark.nt { background: var(--rule-soft); color: var(--ink-3); }
+
+  .datagrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    gap: 16px;
+  }
+
+  .dcard {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+  }
+
+  .dcard > header {
+    padding: 12px 14px 11px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--surface-alt);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .dcard h3 { font-size: 13px; letter-spacing: .01em; }
+
+  .dcard .unit {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+
+  .dcard table { min-width: 0; font-size: 13px; }
+  .dcard thead th { padding: 8px 12px; font-size: 9.5px; letter-spacing: .1em; }
+  .dcard thead th.r { text-align: right; }
+  .dcard thead th.c { text-align: center; }
+  .dcard tbody td { padding: 7px 12px; }
+
+  .dcard td.m {
+    font-family: Archivo, sans-serif;
+    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+
+  .dcard td.v {
+    font-family: "IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+
+  .dcard td.v.act { color: var(--ink); font-weight: 500; }
+  .dcard td.g { text-align: center; width: 40px; }
+
+  .dcard tr.shock td.m { box-shadow: inset 3px 0 0 var(--gold); }
+
+  .dcard footer {
+    border-top: 1px solid var(--rule-soft);
+    padding: 10px 14px 12px;
+    font-size: 12.5px;
+    color: var(--ink-3);
+    line-height: 1.45;
+  }
+
+  /* ---------- shocks ---------- */
+
+  .shocks {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--gold);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+  }
+
+  .shocks div {
+    display: grid;
+    grid-template-columns: 118px 1fr;
+    gap: 18px;
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+
+  .shocks div:last-child { border-bottom: 0; }
+
+  .shocks .d {
+    font-family: "IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  .shocks .t { font-size: 14px; color: var(--ink-2); }
+  .shocks .t strong { color: var(--ink); font-family: Archivo, sans-serif; font-size: 13.5px; }
+
+  @media (max-width: 560px) {
+    .shocks div { grid-template-columns: 1fr; gap: 3px; }
+  }
+
+  /* ---------- footer ---------- */
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+
+  footer a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+  footer a:focus-visible, .wrap a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  footer .srcs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    font-size: 12.5px;
+  }
+
+  .disclaimer {
+    background: var(--surface-alt);
+    border: 1px solid var(--rule-soft);
+    border-radius: 3px;
+    padding: 12px 14px;
+    font-size: 13px;
+    color: var(--ink-2);
+    max-width: none;
+  }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">Referensi tetap · OANDA / SAXO XAUUSD · Semua jam dalam WIB</div>
+    <h1>Peta News XAUUSD</h1>
+    <p class="standfirst">Dibuka dengan angkanya: previous, perkiraan, dan aktual untuk lima belas rilis utama sepanjang 2026. Di bawahnya ritme rilis AS yang berulang tiap bulan lengkap dengan jam WIB-nya, lalu rekap apa yang benar-benar terjadi pada emas.</p>
+    <div class="readout">
+      <div><span class="k">Harga saat ini</span><span class="v gold">4.409</span></div>
+      <div><span class="k">Per</span><span class="v">10 Sep 2026</span></div>
+      <div><span class="k">Puncak 2026</span><span class="v">5.589 · 28 Jan</span></div>
+      <div><span class="k">Terendah 2026</span><span class="v">±3.990 · Jun</span></div>
+      <div><span class="k">Ketua Fed</span><span class="v">Kevin Warsh</span></div>
+      <div><span class="k">FOMC berikutnya</span><span class="v">15–16 Sep</span></div>
+    </div>
+  </header>
+
+  <!-- ============ 1 · DATA RILIS ============ -->
+  <section>
+    <h2>1 · Data rilis 2026 <span class="h2-note">Previous · perkiraan · aktual, per bulan</span></h2>
+    <p>Yang menggerakkan emas bukan angkanya, tapi selisih <strong>aktual dikurangi perkiraan</strong>. Kolom paling kanan menerjemahkan selisih itu ke arah emas, dengan asumsi rezim 2026: data kuat atau inflasi panas menaikkan peluang kenaikan suku bunga, jadi menekan emas.</p>
+
+    <div class="legend">
+      <span><i class="mark dn">▼</i> Aktual mengalahkan perkiraan · hawkish · emas tertekan</span>
+      <span><i class="mark up">▲</i> Aktual meleset di bawah perkiraan · dovish · emas terangkat</span>
+      <span><i class="mark nt">•</i> Persis perkiraan · reaksi tipis</span>
+      <span><i class="mark nt">?</i> Belum rilis</span>
+    </div>
+
+    <h3>Kejutan terbesar sepanjang 2026</h3>
+    <div class="shocks">
+      <div><span class="d">5 Jun</span><span class="t"><strong>NFP Mei · 172K vs 77K</strong> — emas jatuh 146,50 dolar intraday, gerakan harian terbesar dalam lebih dari tiga bulan. DXY melonjak ke 99,726.</span></div>
+      <div><span class="d">4 Sep</span><span class="t"><strong>NFP Agustus · 162K vs 41K</strong> — penambahan kerja terbanyak dalam lima bulan. Inilah yang mengeraskan peluang kenaikan suku bunga 16 September.</span></div>
+      <div><span class="d">Mar</span><span class="t"><strong>CPI Maret · 3,3% vs 2,3%</strong> — meleset satu poin penuh. Titik balik cerita inflasi 2026 dan awal koreksi panjang emas dari puncak Januari.</span></div>
+      <div><span class="d">Apr</span><span class="t"><strong>PPI April · 6,0% vs 4,4%</strong> — guncangan energi Hormuz masuk ke data harga produsen. Lonjakan terbesar di seluruh seri tahun ini.</span></div>
+      <div><span class="d">Mar</span><span class="t"><strong>NFP Februari · −92K vs +79K</strong> — satu-satunya kejutan dovish berskala besar di paruh pertama. Emas menguat, tapi tidak bertahan.</span></div>
+      <div><span class="d">28 Agu</span><span class="t"><strong>Jackson Hole</strong> — bukan rilis data. Warsh menyebut inflasi masih terlalu tinggi; emas −2,75% dalam satu hari. Pidato bisa memukul lebih keras dari angka.</span></div>
+      <div><span class="d">10 Sep</span><span class="t"><strong>PPI Agustus · konsensus 5,3% dari 4,7%</strong> — belum rilis saat halaman ini ditulis. Pasar memberi harga inflasi produsen yang kembali memanas; hasil di bawah 5,3% akan melemahkan narasi kenaikan suku bunga tepat sehari sebelum CPI.</span></div>
+    </div>
+
+    <p><strong>Pola yang layak dicatat:</strong> dari delapan rilis NFP 2026, enam mengalahkan perkiraan. Rata-rata aktual 87K melawan rata-rata perkiraan 57K — konsensus pasar terlalu pesimistis sepanjang tahun, dan bias itulah yang berulang kali memukul emas. Kalau kamu harus menebak arah kejutan NFP tanpa informasi lain, sejarah 2026 memihak sisi kuat.</p>
+
+    <div class="datagrid">
+
+      <!-- NFP -->
+      <article class="dcard">
+        <header><h3>Non-Farm Payrolls</h3><span class="unit">ribu pekerjaan</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Jan</td><td class="v">48</td><td class="v">89</td><td class="v act">130</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr class="shock"><td class="m">Feb</td><td class="v">126</td><td class="v">79</td><td class="v act">−92</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr class="shock"><td class="m">Mar</td><td class="v">−133</td><td class="v">−6</td><td class="v act">178</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Apr</td><td class="v">185</td><td class="v">90</td><td class="v act">115</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr class="shock"><td class="m">Mei</td><td class="v">179</td><td class="v">77</td><td class="v act">172</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">129</td><td class="v">43</td><td class="v act">57</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">20</td><td class="v">41</td><td class="v act">−23</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr class="shock"><td class="m">Agu</td><td class="v">21</td><td class="v">41</td><td class="v act">162</td><td class="g"><i class="mark dn">▼</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Garis emas menandai kejutan besar. Rilis September jatuh pada 2 Oktober, perkiraan awal 120K.</footer>
+      </article>
+
+      <!-- Unemployment -->
+      <article class="dcard">
+        <header><h3>Tingkat Pengangguran</h3><span class="unit">persen · terbalik</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Jan</td><td class="v">4,4</td><td class="v">4,2</td><td class="v act">4,3</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Feb</td><td class="v">4,3</td><td class="v">4,2</td><td class="v act">4,4</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Mar</td><td class="v">4,4</td><td class="v">4,6</td><td class="v act">4,3</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Apr</td><td class="v">4,3</td><td class="v">4,3</td><td class="v act">4,3</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr><td class="m">Mei</td><td class="v">4,3</td><td class="v">4,2</td><td class="v act">4,3</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">4,3</td><td class="v">4,2</td><td class="v act">4,2</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">4,2</td><td class="v">4,2</td><td class="v act">4,1</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Agu</td><td class="v">4,1</td><td class="v">4,1</td><td class="v act">4,1</td><td class="g"><i class="mark nt">•</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Polaritasnya terbalik: pengangguran lebih tinggi dari perkiraan berarti dovish, jadi mengangkat emas.</footer>
+      </article>
+
+      <!-- CPI -->
+      <article class="dcard">
+        <header><h3>CPI y/y</h3><span class="unit">persen</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Jan</td><td class="v">2,7</td><td class="v">2,5</td><td class="v act">2,4</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Feb</td><td class="v">2,4</td><td class="v">2,2</td><td class="v act">2,4</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr class="shock"><td class="m">Mar</td><td class="v">2,4</td><td class="v">2,3</td><td class="v act">3,3</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Apr</td><td class="v">3,3</td><td class="v">3,7</td><td class="v act">3,8</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Mei</td><td class="v">3,8</td><td class="v">4,0</td><td class="v act">4,2</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">4,2</td><td class="v">3,8</td><td class="v act">3,5</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">3,5</td><td class="v">2,7</td><td class="v act">3,4</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Agu</td><td class="v">3,4</td><td class="v">3,4</td><td class="v act">—</td><td class="g"><i class="mark nt">?</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Baris Agustus rilis 11 September 19:30 WIB. Puncak inflasi tahun ini 4,2% pada Mei, lalu mereda.</footer>
+      </article>
+
+      <!-- Core CPI -->
+      <article class="dcard">
+        <header><h3>Core CPI y/y</h3><span class="unit">persen · tanpa pangan &amp; energi</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Jan</td><td class="v">2,6</td><td class="v">2,6</td><td class="v act">2,5</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Feb</td><td class="v">2,5</td><td class="v">2,6</td><td class="v act">2,5</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Mar</td><td class="v">2,5</td><td class="v">2,5</td><td class="v act">2,6</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Apr</td><td class="v">2,6</td><td class="v">2,7</td><td class="v act">2,8</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Mei</td><td class="v">2,8</td><td class="v">2,9</td><td class="v act">2,9</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">2,9</td><td class="v">2,9</td><td class="v act">2,6</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">2,6</td><td class="v">2,6</td><td class="v act">2,5</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Agu</td><td class="v">2,5</td><td class="v">2,4</td><td class="v act">—</td><td class="g"><i class="mark nt">?</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Inti bergerak jauh lebih tenang dari CPI utama — bukti lonjakan 2026 datang dari energi, bukan dari permintaan.</footer>
+      </article>
+
+      <!-- PPI -->
+      <article class="dcard">
+        <header><h3>PPI y/y</h3><span class="unit">persen</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Jan</td><td class="v">3,0</td><td class="v">3,3</td><td class="v act">2,9</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Feb</td><td class="v">2,9</td><td class="v">2,8</td><td class="v act">3,4</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Mar</td><td class="v">3,4</td><td class="v">3,6</td><td class="v act">4,0</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr class="shock"><td class="m">Apr</td><td class="v">4,0</td><td class="v">4,4</td><td class="v act">6,0</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Mei</td><td class="v">6,0</td><td class="v">4,5</td><td class="v act">6,5</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">6,5</td><td class="v">4,8</td><td class="v act">5,5</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">5,5</td><td class="v">6,1</td><td class="v act">4,7</td><td class="g"><i class="mark up">▲</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Rilis Agustus baru jatuh 10 September 19:30 WIB dan belum keluar. Konsensusnya 5,3% — naik dari 4,7%, arah yang berlawanan dengan tren empat bulan terakhir.</footer>
+      </article>
+
+      <!-- PCE -->
+      <article class="dcard">
+        <header><h3>PCE Price Index y/y</h3><span class="unit">persen · ukuran Fed</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Jan</td><td class="v">2,9</td><td class="v">2,9</td><td class="v act">2,8</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Feb</td><td class="v">2,8</td><td class="v">2,8</td><td class="v act">2,8</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr class="shock"><td class="m">Mar</td><td class="v">2,8</td><td class="v">3,0</td><td class="v act">3,5</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Apr</td><td class="v">3,5</td><td class="v">3,8</td><td class="v act">3,8</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr><td class="m">Mei</td><td class="v">3,8</td><td class="v">4,1</td><td class="v act">4,1</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">4,1</td><td class="v">4,5</td><td class="v act">3,7</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">3,7</td><td class="v">3,0</td><td class="v act">3,7</td><td class="g"><i class="mark dn">▼</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Tiga bulan berturut-turut persis perkiraan (Feb, Apr, Mei) — PCE jarang jadi pemicu gerakan besar, tapi mengunci arah.</footer>
+      </article>
+
+      <!-- ADP -->
+      <article class="dcard">
+        <header><h3>ADP</h3><span class="unit">ribu pekerjaan swasta</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Jan</td><td class="v">41</td><td class="v">7</td><td class="v act">22</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Feb</td><td class="v">22</td><td class="v">11</td><td class="v act">63</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Mar</td><td class="v">63</td><td class="v">20</td><td class="v act">62</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Apr</td><td class="v">61</td><td class="v">26</td><td class="v act">109</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Mei</td><td class="v">—</td><td class="v">105</td><td class="v act">122</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">—</td><td class="v">122</td><td class="v act">98</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">98</td><td class="v">−12</td><td class="v act">44</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Agu</td><td class="v">44</td><td class="v">14</td><td class="v act">38</td><td class="g"><i class="mark dn">▼</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>ADP mengalahkan perkiraan tujuh dari delapan bulan, tapi arahnya sering beda dari NFP dua hari kemudian. Jangan pakai ADP untuk menebak NFP.</footer>
+      </article>
+
+      <!-- JOLTS -->
+      <article class="dcard">
+        <header><h3>JOLTS Lowongan Kerja</h3><span class="unit">juta</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Jan</td><td class="v">6,55</td><td class="v">7,12</td><td class="v act">6,95</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Feb</td><td class="v">7,24</td><td class="v">6,93</td><td class="v act">6,88</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Mar</td><td class="v">6,92</td><td class="v">6,91</td><td class="v act">6,87</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr class="shock"><td class="m">Apr</td><td class="v">6,89</td><td class="v">6,79</td><td class="v act">7,62</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Mei</td><td class="v">7,59</td><td class="v">6,82</td><td class="v act">7,59</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">7,54</td><td class="v">6,95</td><td class="v act">7,36</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">7,18</td><td class="v">7,50</td><td class="v act">7,27</td><td class="g"><i class="mark up">▲</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Lompatan April dari 6,89 ke 7,62 juta lowongan mengubah pembacaan pasar kerja dari melemah jadi mengetat.</footer>
+      </article>
+
+      <!-- Avg hourly earnings -->
+      <article class="dcard">
+        <header><h3>Upah per Jam y/y</h3><span class="unit">persen</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Jan</td><td class="v">3,8</td><td class="v">3,7</td><td class="v act">3,7</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr><td class="m">Feb</td><td class="v">3,7</td><td class="v">3,7</td><td class="v act">3,8</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Mar</td><td class="v">3,8</td><td class="v">3,8</td><td class="v act">3,5</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Apr</td><td class="v">3,5</td><td class="v">3,6</td><td class="v act">3,6</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr><td class="m">Mei</td><td class="v">3,6</td><td class="v">3,6</td><td class="v act">3,4</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">3,4</td><td class="v">3,5</td><td class="v act">3,5</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">3,5</td><td class="v">3,5</td><td class="v act">3,2</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Agu</td><td class="v">3,2</td><td class="v">3,4</td><td class="v act">3,1</td><td class="g"><i class="mark up">▲</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Satu-satunya seri yang konsisten mendukung emas: upah turun dari 3,8% ke 3,1% tanpa satu pun kejutan besar ke atas.</footer>
+      </article>
+
+      <!-- ISM Manufaktur -->
+      <article class="dcard">
+        <header><h3>ISM Manufaktur</h3><span class="unit">indeks · 50 = batas</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr class="shock"><td class="m">Jan</td><td class="v">47,9</td><td class="v">47,4</td><td class="v act">52,6</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Feb</td><td class="v">52,6</td><td class="v">53,0</td><td class="v act">52,4</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Mar</td><td class="v">52,4</td><td class="v">52,2</td><td class="v act">52,7</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Apr</td><td class="v">52,7</td><td class="v">49,8</td><td class="v act">52,7</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Mei</td><td class="v">52,7</td><td class="v">50,3</td><td class="v act">54,0</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">—</td><td class="v">54,0</td><td class="v act">53,3</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">53,3</td><td class="v">53,0</td><td class="v act">55,6</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Agu</td><td class="v">55,6</td><td class="v">55,2</td><td class="v act">54,6</td><td class="g"><i class="mark up">▲</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Lompatan Januari dari 47,9 ke 52,6 — dari kontraksi langsung ke ekspansi — adalah kejutan tunggal terbesar seri ini.</footer>
+      </article>
+
+      <!-- ISM Jasa -->
+      <article class="dcard">
+        <header><h3>ISM Jasa</h3><span class="unit">indeks · 50 = batas</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Jan</td><td class="v">53,8</td><td class="v">51,8</td><td class="v act">53,8</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr class="shock"><td class="m">Feb</td><td class="v">53,8</td><td class="v">52,3</td><td class="v act">56,1</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Mar</td><td class="v">56,1</td><td class="v">54,8</td><td class="v act">54,0</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Apr</td><td class="v">54,0</td><td class="v">54,6</td><td class="v act">53,6</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Mei</td><td class="v">53,6</td><td class="v">53,6</td><td class="v act">54,5</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">—</td><td class="v">54,5</td><td class="v act">54,0</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">54,0</td><td class="v">54,3</td><td class="v act">54,1</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Agu</td><td class="v">54,1</td><td class="v">53,8</td><td class="v act">55,4</td><td class="g"><i class="mark dn">▼</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Bertahan di atas 53 sepanjang tahun. Sektor jasa yang tidak pernah goyah inilah alasan Fed merasa punya ruang untuk tetap ketat.</footer>
+      </article>
+
+      <!-- Retail sales -->
+      <article class="dcard">
+        <header><h3>Retail Sales m/m</h3><span class="unit">persen</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Jan</td><td class="v">0,0</td><td class="v">−0,3</td><td class="v act">−0,2</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Feb</td><td class="v">−0,1</td><td class="v">0,3</td><td class="v act">0,6</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr class="shock"><td class="m">Mar</td><td class="v">0,7</td><td class="v">0,6</td><td class="v act">1,7</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Apr</td><td class="v">1,6</td><td class="v">1,2</td><td class="v act">0,5</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Mei</td><td class="v">0,4</td><td class="v">−0,1</td><td class="v act">0,9</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">1,0</td><td class="v">−0,2</td><td class="v act">0,2</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">0,2</td><td class="v">0,0</td><td class="v act">−0,6</td><td class="g"><i class="mark up">▲</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Juli −0,6% adalah penurunan pertama yang berarti tahun ini, dan sejalan dengan pemulihan emas mulai awal Agustus.</footer>
+      </article>
+
+      <!-- Michigan -->
+      <article class="dcard">
+        <header><h3>Sentimen Michigan</h3><span class="unit">indeks · prelim</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Jan</td><td class="v">52,9</td><td class="v">54,3</td><td class="v act">54,0</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Feb</td><td class="v">56,4</td><td class="v">55,1</td><td class="v act">57,3</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Mar</td><td class="v">56,6</td><td class="v">56,8</td><td class="v act">55,5</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr class="shock"><td class="m">Apr</td><td class="v">53,3</td><td class="v">51,3</td><td class="v act">47,6</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Mei</td><td class="v">49,8</td><td class="v">48,6</td><td class="v act">48,2</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Jun</td><td class="v">44,8</td><td class="v">47,6</td><td class="v act">48,9</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Jul</td><td class="v">49,5</td><td class="v">51,1</td><td class="v act">54,4</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr class="shock"><td class="m">Agu</td><td class="v">55,2</td><td class="v">56,4</td><td class="v act">51,0</td><td class="g"><i class="mark up">▲</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Anjlok ke 44,8 pada Juni — dasar sentimen konsumen tahun ini, tepat saat harga bensin melonjak akibat Hormuz.</footer>
+      </article>
+
+      <!-- Fed -->
+      <article class="dcard">
+        <header><h3>Suku Bunga Fed</h3><span class="unit">target 3,50–3,75%</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Rapat</th><th class="r">Konsensus</th><th class="r">Hasil</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">28 Jan</td><td class="v">3,75</td><td class="v act">3,75 · tahan</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr><td class="m">18 Mar</td><td class="v">3,75</td><td class="v act">3,75 · tahan</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr><td class="m">29 Apr</td><td class="v">3,75</td><td class="v act">3,75 · tahan</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr><td class="m">17 Jun</td><td class="v">3,75</td><td class="v act">3,75 · tahan</td><td class="g"><i class="mark nt">•</i></td></tr>
+            <tr class="shock"><td class="m">29 Jul</td><td class="v">3,75</td><td class="v act">3,75 · 3 dissent</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr class="shock"><td class="m">16 Sep</td><td class="v">4,00</td><td class="v act">—</td><td class="g"><i class="mark nt">?</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Lima rapat berturut-turut tahan. Yang menggerakkan pasar di Juli bukan keputusannya, tapi tiga anggota yang menolak dan minta naik 25 bp.</footer>
+      </article>
+
+      <!-- GDP -->
+      <article class="dcard">
+        <header><h3>GDP q/q</h3><span class="unit">persen · tahunan</span></header>
+        <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
+        <table>
+          <thead><tr><th>Rilis</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Q1 awal</td><td class="v">0,5</td><td class="v">−0,2</td><td class="v act">2,0</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Q1 revisi</td><td class="v">2,0</td><td class="v">2,0</td><td class="v act">1,6</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Q1 final</td><td class="v">1,6</td><td class="v">1,6</td><td class="v act">2,1</td><td class="g"><i class="mark dn">▼</i></td></tr>
+            <tr><td class="m">Q2 awal</td><td class="v">2,1</td><td class="v">1,7</td><td class="v act">1,5</td><td class="g"><i class="mark up">▲</i></td></tr>
+            <tr><td class="m">Q2 final</td><td class="v">1,5</td><td class="v">1,5</td><td class="v act">1,5</td><td class="g"><i class="mark nt">•</i></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <footer>Q1 direvisi bolak-balik 2,0 → 1,6 → 2,1. Rilis GDP bukan penggerak emas yang bisa diandalkan; perlakukan sebagai bobot rendah.</footer>
+      </article>
+
+    </div>
+
+    <div class="disclaimer"><strong>Cara membaca kolom Previous:</strong> angka itu adalah nilai bulan sebelumnya <em>seperti dicatat saat rilis</em>, jadi bisa berbeda dari kolom Aktual bulan sebelumnya di tabel yang sama — data ketenagakerjaan AS sering direvisi besar. Selisih itu bukan salah ketik, dan revisi besar sendiri kadang menggerakkan harga.</div>
+  </section>
+
+  <!-- ============ 1. RITME BULANAN ============ -->
+  <section>
+    <h2>2 · Ritme satu bulan <span class="h2-note">Pola yang berulang, bukan tanggal pasti</span></h2>
+    <p>Kalender AS punya bentuk yang sama tiap bulan. Kalau kamu hafal bentuknya, kamu tahu minggu mana yang layak dipakai hold posisi dan minggu mana yang tidak — tanpa buka kalender ekonomi.</p>
+
+    <div class="rhythm">
+      <div>
+        <span class="wk">Minggu 1</span>
+        <ul>
+          <li class="med">ISM Manufaktur</li>
+          <li class="med">ISM Jasa</li>
+          <li class="med">ADP</li>
+          <li class="hi">NFP · Jumat pertama</li>
+        </ul>
+      </div>
+      <div>
+        <span class="wk">Minggu 2</span>
+        <ul>
+          <li class="med">PPI</li>
+          <li class="hi">CPI · tgl 10–15</li>
+          <li>UoM prelim</li>
+        </ul>
+      </div>
+      <div>
+        <span class="wk">Minggu 3</span>
+        <ul>
+          <li class="med">Retail Sales</li>
+          <li class="hi">FOMC · 8× setahun</li>
+          <li>Notulen FOMC</li>
+        </ul>
+      </div>
+      <div>
+        <span class="wk">Minggu 4</span>
+        <ul>
+          <li class="med">GDP</li>
+          <li class="hi">Core PCE</li>
+          <li>Pidato Ketua Fed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. TABEL EVENT ============ -->
+  <section>
+    <h2>3 · Kalender rutin bulanan <span class="h2-note">Jam WIB, dua kolom karena DST Amerika</span></h2>
+    <p>Kolom kiri berlaku sekarang (AS masih pakai <em>daylight time</em>, UTC−4, sampai 1 November 2026). Kolom kanan berlaku 1 Nov 2026 – Mar 2027, saat semua rilis mundur satu jam di WIB.</p>
+
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Rilis</th>
+            <th>Kapan</th>
+            <th>Jam WIB</th>
+            <th>Bobot</th>
+            <th>Arti buat emas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="sev-hi">
+            <td class="ev">NFP<span class="sub">Employment Situation</span></td>
+            <td>Jumat pertama tiap bulan</td>
+            <td class="time">19:30<span class="alt">20:30 (EST)</span></td>
+            <td><span class="chip hi">Tinggi</span></td>
+            <td>Penggerak harian terbesar. 5 Juni 2026 emas jatuh 146,50 dolar intraday hanya dari rilis ini.</td>
+          </tr>
+          <tr class="sev-hi">
+            <td class="ev">CPI<span class="sub">Inflasi konsumen</span></td>
+            <td>Sekitar tanggal 10–15</td>
+            <td class="time">19:30<span class="alt">20:30 (EST)</span></td>
+            <td><span class="chip hi">Tinggi</span></td>
+            <td>Di rezim Warsh ini nomor satu — CPI panas langsung menaikkan peluang <em>hike</em> dan menekan emas.</td>
+          </tr>
+          <tr class="sev-hi">
+            <td class="ev">FOMC · Statement<span class="sub">Keputusan suku bunga</span></td>
+            <td>8× setahun, hari Rabu</td>
+            <td class="time">01:00 (Kamis dini hari)<span class="alt">02:00 (EST)</span></td>
+            <td><span class="chip hi">Tinggi</span></td>
+            <td>Rilis dini hari WIB. Posisi yang di-hold semalaman menanggung gap penuh.</td>
+          </tr>
+          <tr class="sev-hi">
+            <td class="ev">FOMC · Konferensi pers<span class="sub">Ketua Fed bicara</span></td>
+            <td>30 menit setelah statement</td>
+            <td class="time">01:30<span class="alt">02:30 (EST)</span></td>
+            <td><span class="chip hi">Tinggi</span></td>
+            <td>Sering membalik arah reaksi awal statement. Gerakan kedua biasanya lebih besar dari yang pertama.</td>
+          </tr>
+          <tr class="sev-hi">
+            <td class="ev">Core PCE<span class="sub">Ukuran inflasi favorit Fed</span></td>
+            <td>Akhir bulan</td>
+            <td class="time">19:30<span class="alt">20:30 (EST)</span></td>
+            <td><span class="chip hi">Tinggi</span></td>
+            <td>Kalau CPI dan PCE searah, tren yang lahir dari CPI biasanya berlanjut.</td>
+          </tr>
+          <tr class="sev-med">
+            <td class="ev">PPI<span class="sub">Inflasi produsen</span></td>
+            <td>Sehari sebelum/sesudah CPI</td>
+            <td class="time">19:30<span class="alt">20:30 (EST)</span></td>
+            <td><span class="chip med">Sedang</span></td>
+            <td>Dipakai pasar sebagai bocoran arah CPI. Reaksi kecil tapi sering menentukan bias sehari.</td>
+          </tr>
+          <tr class="sev-med">
+            <td class="ev">ISM Jasa<span class="sub">Services PMI</span></td>
+            <td>Hari kerja ke-3</td>
+            <td class="time">21:00<span class="alt">22:00 (EST)</span></td>
+            <td><span class="chip med">Sedang</span></td>
+            <td>Sektor jasa = 70% ekonomi AS. Meleset jauh bisa menggerakkan emas seperti NFP kecil.</td>
+          </tr>
+          <tr class="sev-med">
+            <td class="ev">ISM Manufaktur<span class="sub">Manufacturing PMI</span></td>
+            <td>Hari kerja ke-1</td>
+            <td class="time">21:00<span class="alt">22:00 (EST)</span></td>
+            <td><span class="chip med">Sedang</span></td>
+            <td>Pembuka bulan. Sering menetapkan nada DXY untuk minggu pertama.</td>
+          </tr>
+          <tr class="sev-med">
+            <td class="ev">ADP<span class="sub">Data upah swasta</span></td>
+            <td>Rabu sebelum NFP</td>
+            <td class="time">19:15<span class="alt">20:15 (EST)</span></td>
+            <td><span class="chip med">Sedang</span></td>
+            <td>Korelasinya ke NFP lemah, tapi pasar tetap bereaksi. Jangan jadikan dasar posisi besar.</td>
+          </tr>
+          <tr class="sev-med">
+            <td class="ev">Retail Sales<span class="sub">Penjualan ritel</span></td>
+            <td>Pertengahan bulan</td>
+            <td class="time">19:30<span class="alt">20:30 (EST)</span></td>
+            <td><span class="chip med">Sedang</span></td>
+            <td>Konsumsi kuat = ruang Fed untuk tetap ketat = negatif emas.</td>
+          </tr>
+          <tr class="sev-med">
+            <td class="ev">Klaim mingguan<span class="sub">Initial Jobless Claims</span></td>
+            <td>Tiap Kamis</td>
+            <td class="time">19:30<span class="alt">20:30 (EST)</span></td>
+            <td><span class="chip med">Sedang</span></td>
+            <td>Bobotnya kecil, tapi frekuensinya mingguan — inilah yang paling sering menyapu limit menggantung.</td>
+          </tr>
+          <tr class="sev-lo">
+            <td class="ev">Notulen FOMC<span class="sub">Meeting Minutes</span></td>
+            <td>3 minggu setelah rapat</td>
+            <td class="time">01:00<span class="alt">02:00 (EST)</span></td>
+            <td><span class="chip lo">Rendah</span></td>
+            <td>Biasanya sudah <em>priced in</em>. Berbahaya hanya kalau nadanya beda jauh dari konferensi pers.</td>
+          </tr>
+          <tr class="sev-lo">
+            <td class="ev">GDP<span class="sub">Advance / 2nd / 3rd</span></td>
+            <td>Akhir bulan</td>
+            <td class="time">19:30<span class="alt">20:30 (EST)</span></td>
+            <td><span class="chip lo">Rendah</span></td>
+            <td>Data mundur, jarang mengubah ekspektasi suku bunga. Rilis awal (advance) yang paling terasa.</td>
+          </tr>
+          <tr class="sev-lo">
+            <td class="ev">UoM Sentimen<span class="sub">Termasuk ekspektasi inflasi</span></td>
+            <td>Jumat pertengahan bulan</td>
+            <td class="time">21:00<span class="alt">22:00 (EST)</span></td>
+            <td><span class="chip lo">Rendah</span></td>
+            <td>Yang dilihat pasar cuma komponen ekspektasi inflasi 1 tahun.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="disclaimer"><strong>Jadwal FOMC 2026:</strong> 27–28 Jan · 17–18 Mar · 28–29 Apr · 16–17 Jun · 28–29 Jul · <strong>15–16 Sep</strong> · 27–28 Okt · 8–9 Des. Rapat Maret, Juni, September, dan Desember membawa <em>dot plot</em> — reaksinya lebih besar dari rapat biasa.</div>
+  </section>
+
+  <!-- ============ 3. JENDELA BERBAHAYA ============ -->
+  <section>
+    <h2>4 · Jendela berbahaya <span class="h2-note">Aturan praktis untuk hold dan limit menggantung</span></h2>
+
+    <div class="danger">
+      <article>
+        <span class="win">19:00 – 21:00 · Jumat pertama</span>
+        <p>Jendela NFP. Spread melebar sebelum rilis, dan sapuan pertama sering ke arah yang salah sebelum tren sebenarnya jalan.</p>
+      </article>
+      <article>
+        <span class="win">19:00 – 21:00 · hari CPI</span>
+        <p>Selama Fed masih memperdebatkan <em>hike</em>, ini jendela paling ganas dalam sebulan — lebih dari NFP sekalipun.</p>
+      </article>
+      <article>
+        <span class="win">00:30 – 03:00 · malam FOMC</span>
+        <p>Statement lalu konferensi pers. Dua gelombang terpisah 30 menit; posisi tanpa pengawasan menanggung keduanya.</p>
+      </article>
+      <article class="soft">
+        <span class="win">19:15 – 20:00 · tiap Kamis</span>
+        <p>Klaim mingguan. Kecil, tapi rutin. Limit menggantung di zona tipis sering kena justru di sini, bukan di NFP.</p>
+      </article>
+      <article class="soft">
+        <span class="win">Akhir Agustus</span>
+        <p>Simposium Jackson Hole. Bukan rilis data, tapi pada 28 Agustus 2026 pidato Warsh menjatuhkan emas 2,75% dalam sehari.</p>
+      </article>
+      <article class="soft">
+        <span class="win">Sepanjang hari · berita Hormuz</span>
+        <p>Krisis Selat Hormuz bekerja dua arah: risiko geopolitik mengangkat emas, tapi lonjakan minyak menaikkan ekspektasi inflasi dan justru menekannya.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 4. REKAP 2026 ============ -->
+  <section>
+    <h2>5 · Jalur harga 2026 <span class="h2-note">Titik acuan dari laporan pasar</span></h2>
+
+    <div class="chartbox">
+      <svg viewBox="0 0 900 352" role="img" aria-label="Jalur harga emas 2026 dari puncak 5.589 dolar pada 28 Januari turun ke sekitar 3.990 dolar akhir Juni lalu pulih ke 4.409 dolar pada 10 September">
+        <!-- gridlines -->
+        <g stroke="var(--rule-soft)" stroke-width="1">
+          <line x1="60" y1="56.6"  x2="876" y2="56.6"></line>
+          <line x1="60" y1="128.2" x2="876" y2="128.2"></line>
+          <line x1="60" y1="199.8" x2="876" y2="199.8"></line>
+          <line x1="60" y1="271.4" x2="876" y2="271.4"></line>
+        </g>
+        <line x1="60" y1="300" x2="876" y2="300" stroke="var(--rule)" stroke-width="1"></line>
+
+        <!-- y labels -->
+        <g class="tick" fill="var(--ink-3)" font-size="11" text-anchor="end" font-family="IBM Plex Mono, monospace">
+          <text x="52" y="60.6">5.500</text>
+          <text x="52" y="132.2">5.000</text>
+          <text x="52" y="203.8">4.500</text>
+          <text x="52" y="275.4">4.000</text>
+        </g>
+
+        <!-- x labels -->
+        <g class="tick" fill="var(--ink-3)" font-size="11" text-anchor="middle" font-family="Archivo, sans-serif" letter-spacing="0.08em">
+          <text x="80"  y="322">JAN</text>
+          <text x="148" y="322">FEB</text>
+          <text x="249" y="322">MAR</text>
+          <text x="352" y="322">APR</text>
+          <text x="456" y="322">MEI</text>
+          <text x="560" y="322">JUN</text>
+          <text x="663" y="322">JUL</text>
+          <text x="769" y="322">AGU</text>
+          <text x="849" y="322">SEP</text>
+        </g>
+
+        <!-- path -->
+        <polyline fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"
+          points="87,44 298,214 441,172 505,206 607,273 624,257 750,224 808,204 852,213"></polyline>
+
+        <!-- points -->
+        <g fill="var(--surface)" stroke="var(--gold)" stroke-width="2">
+          <circle cx="87"  cy="44"  r="3.5"></circle>
+          <circle cx="298" cy="214" r="3.5"></circle>
+          <circle cx="441" cy="172" r="3.5"></circle>
+          <circle cx="505" cy="206" r="3.5"></circle>
+          <circle cx="607" cy="273" r="3.5"></circle>
+          <circle cx="624" cy="257" r="3.5"></circle>
+          <circle cx="750" cy="224" r="3.5"></circle>
+          <circle cx="808" cy="204" r="3.5"></circle>
+        </g>
+        <circle cx="852" cy="213" r="5" fill="var(--gold)" stroke="var(--surface)" stroke-width="2"></circle>
+
+        <!-- annotations -->
+        <text x="98" y="40" font-family="Archivo, sans-serif" font-size="11.5" font-weight="600" fill="var(--ink)">ATH 5.589 · 28 Jan</text>
+        <text x="607" y="294" font-family="Archivo, sans-serif" font-size="11.5" font-weight="600" fill="var(--ink)" text-anchor="middle">Terendah 7 bulan ±3.990</text>
+        <text x="846" y="186" font-family="Archivo, sans-serif" font-size="11.5" font-weight="600" fill="var(--gold)" text-anchor="end">4.409 · 10 Sep</text>
+      </svg>
+      <p class="caption">Sembilan titik acuan yang dikutip laporan pasar sepanjang 2026 — <strong>bukan</strong> harga penutupan bulanan resmi dan tidak untuk dipakai sebagai level teknikal. Ambil level entry dari chart, bukan dari grafik ini.</p>
+    </div>
+  </section>
+
+  <!-- ============ 5. TABEL BULANAN ============ -->
+  <section>
+    <h2>6 · Rekap bulanan 2026 <span class="h2-note">Peristiwa yang benar-benar menggerakkan emas</span></h2>
+
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Bulan</th>
+            <th>Arah</th>
+            <th>Level acuan</th>
+            <th>Peristiwa penentu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="mo">Jan</td>
+            <td><span class="dir up">Naik ke ATH</span></td>
+            <td class="num">5.589 · 28 Jan</td>
+            <td>Emas menembus 5.500 untuk pertama kalinya. Pendorongnya dolar lemah, arus masuk ETF, dan ketidakpastian geopolitik. FOMC 27–28 Jan.</td>
+          </tr>
+          <tr>
+            <td class="mo">Feb</td>
+            <td><span class="dir down">Koreksi tajam</span></td>
+            <td class="num">turun dari puncak</td>
+            <td>Guncangan harga energi mengangkat ekspektasi inflasi; harapan pemangkasan suku bunga jangka dekat mendingin. Aksi ambil untung setelah lari ke rekor.</td>
+          </tr>
+          <tr>
+            <td class="mo">Mar</td>
+            <td><span class="dir down">Lanjut turun</span></td>
+            <td class="num">4.300 – 4.500</td>
+            <td>Koreksi berlanjut sampai kisaran 4.300–4.500 di akhir Maret. FOMC 17–18 Mar membawa dot plot yang lebih ketat dari harapan pasar.</td>
+          </tr>
+          <tr>
+            <td class="mo">Apr</td>
+            <td><span class="dir down">Tertekan</span></td>
+            <td class="num">di bawah 5.000</td>
+            <td>Dolar rebound dan menekan emas secara mekanis. Konflik AS–Iran memanas. FOMC 28–29 Apr.</td>
+          </tr>
+          <tr>
+            <td class="mo">Mei</td>
+            <td><span class="dir down">Patah arah</span></td>
+            <td class="num">4.694 → 4.457</td>
+            <td><strong>22 Mei: Kevin Warsh resmi jadi Ketua Fed</strong> — emas anjlok, perak kehilangan 31,4%, dolar menguat. Selat Hormuz efektif tertutup, minyak menembus 100 dolar. Per 12 Mei emas sudah −16% dari puncak Januari.</td>
+          </tr>
+          <tr>
+            <td class="mo">Jun</td>
+            <td><span class="dir down">Bulan terburuk</span></td>
+            <td class="num">±3.990</td>
+            <td><strong>Penurunan bulanan terburuk sejak Oktober 2008.</strong> Terendah tujuh bulan di kisaran 3.975–4.000. Pada 5 Juni rilis NFP menjatuhkan emas 146,50 dolar intraday — gerakan harian terbesar dalam lebih dari tiga bulan — dengan DXY melonjak ke 99,726.</td>
+          </tr>
+          <tr>
+            <td class="mo">Jul</td>
+            <td><span class="dir flat">Sideways</span></td>
+            <td class="num">4.074 – 4.112</td>
+            <td>Enam minggu konsolidasi di sekitar pivot 4.074–4.112. Arus keluar ETF mencapai 8,9 miliar dolar dalam sebulan. FOMC 28–29 Jul tanpa kejutan.</td>
+          </tr>
+          <tr>
+            <td class="mo">Agu</td>
+            <td><span class="dir up">Pulih lalu dipukul</span></td>
+            <td class="num">4.332 → 4.474</td>
+            <td>Pemulihan mulai awal Agustus; 11 Agu di 4.332. <strong>28 Agu di Jackson Hole, Warsh memperingatkan inflasi masih terlalu tinggi</strong> — emas −2,75% ke 4.474 dan peluang kenaikan suku bunga September melompat dari sekitar 1 : 3 menjadi di atas 50%.</td>
+          </tr>
+          <tr>
+            <td class="mo">Sep</td>
+            <td><span class="dir flat">Berjalan</span></td>
+            <td class="num">4.340 – 4.409</td>
+            <td>Sempat menyentuh 4.340 pada 9 Sep lalu rebound setelah serangan tanker Iran mengangkat permintaan aset lindung. Peluang <em>hike</em> 16 Sep bertahan di sekitar 60% menjelang PPI dan CPI.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 6. BULAN BERJALAN ============ -->
+  <section>
+    <h2>7 · September 2026 <span class="h2-note">Sisa agenda bulan berjalan</span></h2>
+
+    <div class="now">
+      <h3>Tiga hari yang menentukan arah kuartal</h3>
+      <ol>
+        <li><span class="when">10 Sep</span><span class="what"><strong>PPI Agustus</strong> · 19:30 WIB — konsensus justru <em>naik</em> ke 5,3% y/y dari 4,7%, dan 0,4% m/m dari 0%. Pasar sudah memberi harga inflasi produsen yang memanas; yang menggerakkan emas adalah selisihnya, bukan angkanya. Barengan dengan klaim mingguan, konsensus 205K dari 206K.</span></li>
+        <li><span class="when">11 Sep</span><span class="what"><strong>CPI Agustus</strong> · 19:30 WIB — rilis paling berbobot bulan ini. Konsensus 3,4% y/y (sama dengan Juli) dan inti 2,4% dari 2,5%. Kalau meleset ke bawah, peluang <em>hike</em> 60% itu runtuh.</span></li>
+        <li><span class="when">16 Sep</span><span class="what"><strong>FOMC + dot plot</strong> · statement 01:00 WIB, konferensi pers 01:30 WIB (dini hari 17 Sep). Konsensus 4,00% — artinya pasar memberi harga kenaikan 25 bp, kenaikan pertama di bawah Warsh. Model TradingEconomics justru memperkirakan tahan di 3,75%, jadi ini rapat dengan risiko dua arah yang nyata.</span></li>
+        <li><span class="when">16 Sep</span><span class="what"><strong>Retail Sales Agustus</strong> · 19:30 WIB — konsensus 0,3% m/m setelah −0,6% di Juli.</span></li>
+        <li><span class="when">30 Sep</span><span class="what"><strong>Core PCE Agustus</strong> · 19:30 WIB — konfirmasi atau bantahan atas cerita inflasi yang dibangun CPI.</span></li>
+        <li><span class="when">2 Okt</span><span class="what"><strong>NFP September</strong> · 19:30 WIB — konsensus 120K setelah 162K. Perkiraan kali ini jauh lebih tinggi dari biasanya, jadi ruang untuk kejutan ke atas lebih sempit.</span></li>
+      </ol>
+      <p>Konteks: emas sudah −21% dari puncak Januari tapi naik dari dasar Juni. Yang unik di 2026, kenaikan minyak akibat Hormuz <em>menekan</em> emas alih-alih mengangkatnya, karena pasar membacanya sebagai alasan tambahan bagi Fed untuk tetap ketat.</p>
+    </div>
+  </section>
+
+
+  <footer>
+    <p class="disclaimer">Halaman ini rangkuman berita dan kalender, bukan rekomendasi entry. Level acuan diambil dari laporan pasar dan bisa berbeda beberapa dolar dari data broker kamu — untuk keputusan trading, pakai angka dari chart sendiri.</p>
+    <p class="disclaimer">Butuh tampilan kalender per bulan lengkap dengan tanggal dan jam tiap rilis? Ada di halaman terpisah: <a href="kalender.html">Kalender XAUUSD 2026</a>.</p>
+    <div>
+      <span class="eyebrow">Sumber</span>
+      <div class="srcs">
+        <a href="https://www.cnbc.com/2026/08/28/gold-slips-as-fed-chief-warshs-jackson-hole-speech-looms.html">CNBC · Jackson Hole</a>
+        <a href="https://www.npr.org/2026/08/28/nx-s1-5947903/federal-reserve-inflation-jackson-hole-interest-rates">NPR · Warsh inflasi</a>
+        <a href="https://www.gold.org/goldhub/research/gold-mid-year-outlook-2026">World Gold Council</a>
+        <a href="https://www.ssga.com/library-content/products/fund-docs/etfs/us/insights-investment-ideas/monthly-gold-monitor.pdf">SSGA · Gold Monitor Agu 2026</a>
+        <a href="https://goldsilver.com/industry-news/goldsilver-news/why-gold-fell-on-the-hormuz-tanker-strike/">GoldSilver · Hormuz</a>
+        <a href="https://sprott.com/insights/gold-and-the-hormuz-disruption-a-monetary-stress-test/">Sprott · Hormuz</a>
+        <a href="https://www.usinflationcalculator.com/inflation/consumer-price-index-release-schedule/">Jadwal rilis CPI</a>
+        <a href="https://www.financecalendar.com/fomc-meetings/">Jadwal FOMC 2026</a>
+        <a href="https://www.mql5.com/en/economic-calendar/united-states">MQL5 · previous/forecast/actual</a>
+        <a href="https://tradingeconomics.com/united-states/calendar">TradingEconomics · kalender AS</a>
+        <a href="https://tradingeconomics.com/united-states/interest-rate">TradingEconomics · suku bunga</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  html { color-scheme: light dark; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>Kalender XAUUSD 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --ground:      #eef0f2;
+    --surface:     #ffffff;
+    --surface-alt: #f6f7f9;
+    --band:        #e9ecef;
+    --ink:         #14171c;
+    --ink-2:       #454c58;
+    --ink-3:       #737b88;
+    --rule:        #d6dae0;
+    --rule-soft:   #e8eaee;
+    --gold:        #9a6f16;
+    --gold-soft:   #f5ebd5;
+    --hi:          #a52a1e;
+    --hi-soft:     #f8e2df;
+    --md:          #8b5804;
+    --md-soft:     #f8ecd6;
+    --lo:          #1a6459;
+    --lo-soft:     #dff0eb;
+    --shadow:      0 1px 2px rgba(20, 23, 28, .07), 0 10px 28px -20px rgba(20, 23, 28, .45);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:      #111318;
+      --surface:     #1a1d23;
+      --surface-alt: #20242b;
+      --band:        #262b33;
+      --ink:         #e8eaee;
+      --ink-2:       #b0b7c2;
+      --ink-3:       #838b98;
+      --rule:        #313742;
+      --rule-soft:   #262b33;
+      --gold:        #e0b252;
+      --gold-soft:   #3a2f16;
+      --hi:          #f08a7c;
+      --hi-soft:     #3f201c;
+      --md:          #e0a94f;
+      --md-soft:     #392b11;
+      --lo:          #6fc9b6;
+      --lo-soft:     #16322d;
+      --shadow:      0 1px 2px rgba(0,0,0,.45), 0 10px 28px -20px rgba(0,0,0,.9);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:      #111318;
+    --surface:     #1a1d23;
+    --surface-alt: #20242b;
+    --band:        #262b33;
+    --ink:         #e8eaee;
+    --ink-2:       #b0b7c2;
+    --ink-3:       #838b98;
+    --rule:        #313742;
+    --rule-soft:   #262b33;
+    --gold:        #e0b252;
+    --gold-soft:   #3a2f16;
+    --hi:          #f08a7c;
+    --hi-soft:     #3f201c;
+    --md:          #e0a94f;
+    --md-soft:     #392b11;
+    --lo:          #6fc9b6;
+    --lo-soft:     #16322d;
+    --shadow:      0 1px 2px rgba(0,0,0,.45), 0 10px 28px -20px rgba(0,0,0,.9);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  /* ---------- head ---------- */
+
+  .head { display: flex; flex-direction: column; gap: 12px; }
+
+  .eyebrow {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  h1 {
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.05;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .lede { margin: 0; max-width: 74ch; font-size: 15px; color: var(--ink-2); }
+
+  .now-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 26px;
+    align-items: baseline;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--gold);
+    border-radius: 3px;
+  }
+
+  .now-strip b {
+    font-family: "IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .now-strip span { font-size: 13px; color: var(--ink-3); }
+
+  /* ---------- controls ---------- */
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2px;
+  }
+
+  .months {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 4px;
+  }
+
+  .months button {
+    font-family: Archivo, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    background: transparent;
+    border: 0;
+    border-radius: 2px;
+    padding: 7px 11px;
+    cursor: pointer;
+    transition: background .12s, color .12s;
+  }
+
+  .months button:hover { background: var(--surface-alt); color: var(--ink); }
+  .months button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+  .months button:disabled { opacity: .32; cursor: not-allowed; }
+  .months button:disabled:hover { background: transparent; color: var(--ink-3); }
+  .months button:focus-visible,
+  .filters label:focus-within { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+  .filters {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 13px;
+    color: var(--ink-2);
+  }
+
+  .filters label { display: inline-flex; gap: 7px; align-items: center; cursor: pointer; }
+  .filters input { accent-color: var(--gold); width: 15px; height: 15px; }
+
+  /* ---------- table ---------- */
+
+  .board {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .scroller { overflow-x: auto; }
+
+  table { width: 100%; border-collapse: collapse; min-width: 920px; }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--surface-alt);
+    text-align: left;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+
+  thead th.r { text-align: right; }
+  thead th.c { text-align: center; }
+
+  tr.day td {
+    background: var(--band);
+    font-family: Archivo, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    padding: 8px 14px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  tr.day.today td { background: var(--gold-soft); color: var(--gold); }
+
+  tbody td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--rule-soft);
+    vertical-align: baseline;
+  }
+
+  td.time {
+    font-family: "IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 13px;
+    color: var(--ink);
+    white-space: nowrap;
+    width: 78px;
+  }
+
+  td.time.est { border-bottom: 1px dotted var(--ink-3); }
+
+  td.ev { color: var(--ink); font-weight: 500; font-size: 13.5px; }
+  td.ev .ref { color: var(--ink-3); font-weight: 400; }
+  td.ev .tag {
+    display: inline-block;
+    margin-left: 7px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    color: var(--gold);
+    background: var(--gold-soft);
+    padding: 1px 5px;
+    border-radius: 2px;
+    vertical-align: 1px;
+  }
+
+  td.imp { width: 86px; }
+
+  .chip {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    padding: 3px 7px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .chip.hi { background: var(--hi-soft); color: var(--hi); }
+  .chip.md { background: var(--md-soft); color: var(--md); }
+  .chip.lo { background: var(--lo-soft); color: var(--lo); }
+  .chip.none { background: var(--rule-soft); color: var(--ink-3); }
+
+  td.st {
+    width: 34px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1;
+    color: var(--lo);
+  }
+
+  td.st .wait {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border: 1.5px solid var(--ink-3);
+    border-radius: 50%;
+    opacity: .5;
+  }
+
+  td.n {
+    font-family: "IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 13px;
+    text-align: right;
+    color: var(--ink-3);
+    white-space: nowrap;
+    width: 96px;
+  }
+
+  td.n.act { color: var(--ink); font-weight: 600; }
+  td.n.pending { color: var(--ink-3); }
+
+  td.n .val {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+
+  td.n .val.dn { background: var(--hi-soft); color: var(--hi); }
+  td.n .val.up { background: var(--lo-soft); color: var(--lo); }
+  td.n .val.nt { border-bottom: 1px dotted var(--ink-3); border-radius: 0; padding: 3px 2px; }
+
+  tr.holiday td.ev { color: var(--ink-3); font-style: italic; }
+
+  td.x { width: 52px; text-align: center; }
+
+  .mark {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 11px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  .mark.dn { background: var(--hi-soft); color: var(--hi); }
+  .mark.up { background: var(--lo-soft); color: var(--lo); }
+  .mark.nt { background: var(--rule-soft); color: var(--ink-3); }
+
+  tr.event.big td.ev { box-shadow: none; }
+  tr.event.big td.time { box-shadow: inset 3px 0 0 var(--gold); }
+
+  tr.speech td.ev { color: var(--gold); font-weight: 600; }
+
+  .empty {
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--ink-3);
+    font-size: 14px;
+  }
+
+  /* ---------- legend + notes ---------- */
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    align-items: center;
+    font-size: 12.5px;
+    color: var(--ink-3);
+  }
+
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+
+  .notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+  }
+
+  .notes div {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 13px 15px;
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+
+  .notes b { color: var(--ink); font-weight: 600; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+    font-size: 12.5px;
+    color: var(--ink-3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+  footer a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  footer .srcs { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+  <header class="head">
+    <div class="eyebrow">XAUUSD · rilis data Amerika Serikat · jam WIB</div>
+    <h1>Kalender XAUUSD 2026</h1>
+    <p class="lede">Satu bulan per layar, format previous–konsensus–aktual. Kolom paling kanan menerjemahkan selisih aktual terhadap konsensus menjadi arah emas, memakai asumsi rezim 2026: data kuat atau inflasi panas menaikkan peluang kenaikan suku bunga, jadi menekan emas.</p>
+    <div class="now-strip">
+      <span>Data per <b>10 Sep 2026</b></span>
+      <span>Emas <b>4.409</b></span>
+      <span>Suku bunga Fed <b>3,50–3,75%</b></span>
+      <span>Berikutnya <b>PPI · 10 Sep 19.30</b></span>
+      <span>FOMC <b>17 Sep 01.00</b></span>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="months" id="months" role="group" aria-label="Pilih bulan"></div>
+    <div class="filters">
+      <label><input type="checkbox" id="onlyHigh"> Hanya dampak tinggi</label>
+      <label><input type="checkbox" id="hideEst"> Sembunyikan tanggal pola</label>
+    </div>
+  </div>
+
+  <div class="board">
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr>
+            <th>Jam WIB</th>
+            <th><span aria-label="Status rilis">St</span></th>
+            <th>Rilis</th>
+            <th>Dampak</th>
+            <th class="r">Previous</th>
+            <th class="r">Konsensus</th>
+            <th class="r">Aktual</th>
+            <th class="c">XAU</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><i class="mark dn">▼</i> aktual di atas konsensus · emas tertekan</span>
+    <span><i class="mark up">▲</i> aktual di bawah konsensus · emas terangkat</span>
+    <span><i class="mark nt">•</i> persis konsensus</span>
+    <span><i class="mark nt">?</i> belum rilis</span>
+    <span><b style="color:var(--lo);font-size:14px">&#10003;</b> sudah rilis · lingkaran kosong berarti masih menunggu</span>
+    <span>kotak berwarna di kolom Aktual menandai rilis yang meleset dari konsensus</span>
+    <span><span class="tag" style="margin:0">pola</span> tanggal dari aturan rutin, bukan jadwal resmi terbitan</span>
+  </div>
+
+  <div class="notes">
+    <div><b>Dari mana tanggalnya.</b> NFP, CPI, PPI, Retail Sales, PCE, dan GDP memakai <em>Schedule of Release Dates for Principal Federal Economic Indicators 2026</em> terbitan OMB — jadwal resmi lintas lembaga. JOLTS dari BLS, FOMC dari Federal Reserve. ISM mengikuti aturan hari kerja ke-1 dan ke-3, ADP selalu Rabu dua hari sebelum NFP. Hanya Sentimen Michigan yang masih bertanda <span class="tag" style="margin:0">pola</span>: lembaganya tidak menerbitkan jadwal setahun penuh, jadi saya pakai aturan Jumat kedua — hanya rilis 11 September yang dikonfirmasi langsung.</div>
+    <div><b>Perubahan jam 1 November.</b> Amerika keluar dari daylight time pada 1 Nov 2026. Sejak itu semua rilis 08.30 ET jatuh pukul 20.30 WIB, bukan 19.30, dan FOMC pukul 02.00 WIB. Bulan Februari sampai awal Maret juga masih memakai jam musim dingin.</div>
+    <div><b>Kenapa mulai Februari.</b> Rilis sepanjang Januari 2026 mengacu pada data Desember 2025, di luar cakupan tabel ini. Rapat FOMC 27–28 Januari tetap dicatat di bulan Februari sebagai konteks.</div>
+    <div><b>Previous bukan aktual bulan lalu.</b> Angka previous adalah nilai bulan sebelumnya seperti dicatat saat rilis. Data ketenagakerjaan AS sering direvisi besar, jadi wajar kalau tidak sama dengan kolom aktual di baris sebelumnya.</div>
+  </div>
+
+  <footer>
+    <div><a href="index.html">← Data previous · perkiraan · aktual 2026</a></div>
+    <div>Nilai previous, konsensus, dan aktual dari kalender ekonomi MQL5 dan TradingEconomics. Tanggal rilis resmi dari BLS, BEA, dan Federal Reserve. Halaman ini rangkuman jadwal dan data, bukan rekomendasi entry.</div>
+    <div class="srcs">
+      <a href="https://www.mql5.com/en/economic-calendar/united-states">MQL5 · kalender AS</a>
+      <a href="https://tradingeconomics.com/united-states/calendar">TradingEconomics</a>
+      <a href="https://www.census.gov/economic-indicators/econcards/assets/pdf/censusreleaseglance_2026.pdf">OMB · jadwal indikator utama 2026</a>
+      <a href="https://www.bls.gov/schedule/2026/home.htm">BLS · jadwal rilis 2026</a>
+      <a href="https://www.bea.gov/news/schedule">BEA · jadwal rilis</a>
+      <a href="https://www.financecalendar.com/fomc-meetings/">Jadwal FOMC 2026</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // d: tanggal, w: hari, t: jam WIB, e: nama rilis, r: bulan acuan, i: dampak,
+  // p: previous, c: konsensus, a: aktual (null = belum rilis), x: arah emas,
+  // est: tanggal dari pola, big: kejutan besar, note: catatan
+  var CAL = {
+    "02": { label: "Februari 2026", tz: "musim dingin · 08.30 ET = 20.30 WIB", rows: [
+      { d:2,  w:"Senin",  t:"22.00", e:"ISM Manufaktur", r:"Jan", i:"md", p:"47,9", c:"47,4", a:"52,6", x:"dn", big:true, note:"dari kontraksi langsung ke ekspansi" },
+      { d:4,  w:"Rabu",   t:"20.15", e:"ADP", r:"Jan", i:"md", p:"41K", c:"7K", a:"22K", x:"dn" },
+      { d:4,  w:"Rabu",   t:"22.00", e:"ISM Jasa", r:"Jan", i:"md", p:"53,8", c:"51,8", a:"53,8", x:"dn" },
+      { d:6,  w:"Jumat",  t:"20.30", e:"Non-Farm Payrolls", r:"Jan", i:"hi", p:"48K", c:"89K", a:"130K", x:"dn" },
+      { d:6,  w:"Jumat",  t:"20.30", e:"Tingkat Pengangguran", r:"Jan", i:"hi", p:"4,4%", c:"4,2%", a:"4,3%", x:"up" },
+      { d:6,  w:"Jumat",  t:"20.30", e:"Upah per Jam y/y", r:"Jan", i:"md", p:"3,8%", c:"3,7%", a:"3,7%", x:"nt" },
+      { d:11, w:"Rabu",   t:"20.30", e:"CPI y/y", r:"Jan", i:"hi", p:"2,7%", c:"2,5%", a:"2,4%", x:"up" },
+      { d:11, w:"Rabu",   t:"20.30", e:"Core CPI y/y", r:"Jan", i:"hi", p:"2,6%", c:"2,6%", a:"2,5%", x:"up" },
+      { d:12, w:"Kamis",  t:"20.30", e:"PPI y/y", r:"Jan", i:"md", p:"3,0%", c:"3,3%", a:"2,9%", x:"up" },
+      { d:13, w:"Jumat",  t:"22.00", e:"Sentimen Michigan", r:"Feb awal", i:"lo", p:"56,4", c:"55,1", a:"57,3", x:"dn", est:true },
+      { d:17, w:"Selasa", t:"20.30", e:"Retail Sales m/m", r:"Jan", i:"md", p:"0,0%", c:"−0,3%", a:"−0,2%", x:"dn" },
+      { d:26, w:"Kamis",  t:"20.30", e:"PCE Price Index y/y", r:"Jan", i:"md", p:"2,9%", c:"2,9%", a:"2,8%", x:"up" }
+    ]},
+
+    "03": { label: "Maret 2026", tz: "daylight time mulai 8 Maret · sejak itu 08.30 ET = 19.30 WIB", rows: [
+      { d:2,  w:"Senin",  t:"22.00", e:"ISM Manufaktur", r:"Feb", i:"md", p:"52,6", c:"53,0", a:"52,4", x:"up" },
+      { d:4,  w:"Rabu",   t:"20.15", e:"ADP", r:"Feb", i:"md", p:"22K", c:"11K", a:"63K", x:"dn" },
+      { d:4,  w:"Rabu",   t:"22.00", e:"ISM Jasa", r:"Feb", i:"md", p:"53,8", c:"52,3", a:"56,1", x:"dn", big:true },
+      { d:6,  w:"Jumat",  t:"20.30", e:"Non-Farm Payrolls", r:"Feb", i:"hi", p:"126K", c:"79K", a:"−92K", x:"up", big:true, note:"kejutan dovish terbesar paruh pertama" },
+      { d:6,  w:"Jumat",  t:"20.30", e:"Tingkat Pengangguran", r:"Feb", i:"hi", p:"4,3%", c:"4,2%", a:"4,4%", x:"up" },
+      { d:6,  w:"Jumat",  t:"20.30", e:"Upah per Jam y/y", r:"Feb", i:"md", p:"3,7%", c:"3,7%", a:"3,8%", x:"dn" },
+      { d:11, w:"Rabu",   t:"19.30", e:"CPI y/y", r:"Feb", i:"hi", p:"2,4%", c:"2,2%", a:"2,4%", x:"dn" },
+      { d:11, w:"Rabu",   t:"19.30", e:"Core CPI y/y", r:"Feb", i:"hi", p:"2,5%", c:"2,6%", a:"2,5%", x:"up" },
+      { d:12, w:"Kamis",  t:"19.30", e:"PPI y/y", r:"Feb", i:"md", p:"2,9%", c:"2,8%", a:"3,4%", x:"dn" },
+      { d:13, w:"Jumat",  t:"21.00", e:"JOLTS Lowongan Kerja", r:"Jan", i:"md", p:"6,55 jt", c:"7,12 jt", a:"6,95 jt", x:"up" },
+      { d:13, w:"Jumat",  t:"21.00", e:"Sentimen Michigan", r:"Mar awal", i:"lo", p:"56,6", c:"56,8", a:"55,5", x:"up", est:true },
+      { d:16, w:"Senin",  t:"19.30", e:"Retail Sales m/m", r:"Feb", i:"md", p:"−0,1%", c:"0,3%", a:"0,6%", x:"dn", note:"Census sempat mengumumkan penjadwalan ulang rilis ini ke 1 April" },
+      { d:19, w:"Kamis",  t:"01.00", e:"FOMC · keputusan + dot plot", r:"rapat 17–18 Mar", i:"hi", p:"3,75%", c:"3,75%", a:"3,75% tahan", x:"nt" },
+      { d:27, w:"Jumat",  t:"19.30", e:"PCE Price Index y/y", r:"Feb", i:"md", p:"2,8%", c:"2,8%", a:"2,8%", x:"nt" },
+      { d:31, w:"Selasa", t:"21.00", e:"JOLTS Lowongan Kerja", r:"Feb", i:"md", p:"7,24 jt", c:"6,93 jt", a:"6,88 jt", x:"up" }
+    ]},
+
+    "04": { label: "April 2026", tz: "daylight time · 08.30 ET = 19.30 WIB", rows: [
+      { d:1,  w:"Rabu",   t:"19.15", e:"ADP", r:"Mar", i:"md", p:"63K", c:"20K", a:"62K", x:"dn" },
+      { d:1,  w:"Rabu",   t:"21.00", e:"ISM Manufaktur", r:"Mar", i:"md", p:"52,4", c:"52,2", a:"52,7", x:"dn" },
+      { d:3,  w:"Jumat",  t:"—",     e:"Good Friday · bursa saham AS tutup", r:"", i:"none", p:"—", c:"—", a:null, x:"nt", note:"NFP tetap rilis, tapi likuiditas tipis · gerakan bisa berlebihan" },
+      { d:3,  w:"Jumat",  t:"19.30", e:"Non-Farm Payrolls", r:"Mar", i:"hi", p:"−133K", c:"−6K", a:"178K", x:"dn", big:true, note:"balik arah total dari bulan sebelumnya" },
+      { d:3,  w:"Jumat",  t:"19.30", e:"Tingkat Pengangguran", r:"Mar", i:"hi", p:"4,4%", c:"4,6%", a:"4,3%", x:"dn" },
+      { d:3,  w:"Jumat",  t:"19.30", e:"Upah per Jam y/y", r:"Mar", i:"md", p:"3,8%", c:"3,8%", a:"3,5%", x:"up" },
+      { d:3,  w:"Jumat",  t:"21.00", e:"ISM Jasa", r:"Mar", i:"md", p:"56,1", c:"54,8", a:"54,0", x:"up" },
+      { d:10, w:"Jumat",  t:"19.30", e:"CPI y/y", r:"Mar", i:"hi", p:"2,4%", c:"2,3%", a:"3,3%", x:"dn", big:true, note:"meleset satu poin penuh · titik balik cerita inflasi 2026" },
+      { d:10, w:"Jumat",  t:"19.30", e:"Core CPI y/y", r:"Mar", i:"hi", p:"2,5%", c:"2,5%", a:"2,6%", x:"dn" },
+      { d:10, w:"Jumat",  t:"21.00", e:"Sentimen Michigan", r:"Apr awal", i:"lo", p:"53,3", c:"51,3", a:"47,6", x:"up", est:true, big:true },
+      { d:14, w:"Selasa", t:"19.30", e:"PPI y/y", r:"Mar", i:"md", p:"3,4%", c:"3,6%", a:"4,0%", x:"dn" },
+      { d:16, w:"Kamis",  t:"19.30", e:"Retail Sales m/m", r:"Mar", i:"md", p:"0,7%", c:"0,6%", a:"1,7%", x:"dn", big:true },
+      { d:30, w:"Kamis",  t:"01.00", e:"FOMC · keputusan", r:"rapat 28–29 Apr", i:"hi", p:"3,75%", c:"3,75%", a:"3,75% tahan", x:"nt" },
+      { d:30, w:"Kamis",  t:"19.30", e:"GDP q/q · Q1 awal", r:"Q1", i:"lo", p:"0,5%", c:"−0,2%", a:"2,0%", x:"dn" },
+      { d:30, w:"Kamis",  t:"19.30", e:"PCE Price Index y/y", r:"Mar", i:"md", p:"2,8%", c:"3,0%", a:"3,5%", x:"dn", big:true }
+    ]},
+
+    "05": { label: "Mei 2026", tz: "daylight time · 08.30 ET = 19.30 WIB", rows: [
+      { d:1,  w:"Jumat",  t:"21.00", e:"ISM Manufaktur", r:"Apr", i:"md", p:"52,7", c:"49,8", a:"52,7", x:"dn" },
+      { d:5,  w:"Selasa", t:"21.00", e:"ISM Jasa", r:"Apr", i:"md", p:"54,0", c:"54,6", a:"53,6", x:"up" },
+      { d:5,  w:"Selasa", t:"21.00", e:"JOLTS Lowongan Kerja", r:"Mar", i:"md", p:"6,92 jt", c:"6,91 jt", a:"6,87 jt", x:"up" },
+      { d:6,  w:"Rabu",   t:"19.15", e:"ADP", r:"Apr", i:"md", p:"61K", c:"26K", a:"109K", x:"dn" },
+      { d:8,  w:"Jumat",  t:"19.30", e:"Non-Farm Payrolls", r:"Apr", i:"hi", p:"185K", c:"90K", a:"115K", x:"dn" },
+      { d:8,  w:"Jumat",  t:"19.30", e:"Tingkat Pengangguran", r:"Apr", i:"hi", p:"4,3%", c:"4,3%", a:"4,3%", x:"nt" },
+      { d:8,  w:"Jumat",  t:"19.30", e:"Upah per Jam y/y", r:"Apr", i:"md", p:"3,5%", c:"3,6%", a:"3,6%", x:"nt" },
+      { d:12, w:"Selasa", t:"19.30", e:"CPI y/y", r:"Apr", i:"hi", p:"3,3%", c:"3,7%", a:"3,8%", x:"dn" },
+      { d:12, w:"Selasa", t:"19.30", e:"Core CPI y/y", r:"Apr", i:"hi", p:"2,6%", c:"2,7%", a:"2,8%", x:"dn" },
+      { d:13, w:"Rabu",   t:"19.30", e:"PPI y/y", r:"Apr", i:"md", p:"4,0%", c:"4,4%", a:"6,0%", x:"dn", big:true, note:"guncangan energi Hormuz masuk ke harga produsen" },
+      { d:14, w:"Kamis",  t:"19.30", e:"Retail Sales m/m", r:"Apr", i:"md", p:"1,6%", c:"1,2%", a:"0,5%", x:"up" },
+      { d:15, w:"Jumat",  t:"21.00", e:"Sentimen Michigan", r:"Mei awal", i:"lo", p:"49,8", c:"48,6", a:"48,2", x:"up", est:true },
+      { d:22, w:"Jumat",  t:"—",     e:"Kevin Warsh resmi menjabat Ketua Fed", r:"bukan rilis data", i:"hi", p:"—", c:"—", a:"emas anjlok", x:"dn", speech:true, big:true, note:"perak −31,4% · dolar menguat" },
+      { d:25, w:"Senin",  t:"—",     e:"Memorial Day · pasar AS tutup", r:"", i:"none", p:"—", c:"—", a:null, x:"nt" },
+      { d:28, w:"Kamis",  t:"19.30", e:"GDP q/q · Q1 revisi", r:"Q1", i:"lo", p:"2,0%", c:"2,0%", a:"1,6%", x:"up" },
+      { d:28, w:"Kamis",  t:"19.30", e:"PCE Price Index y/y", r:"Apr", i:"md", p:"3,5%", c:"3,8%", a:"3,8%", x:"nt" }
+    ]},
+
+    "06": { label: "Juni 2026", tz: "daylight time · 08.30 ET = 19.30 WIB", rows: [
+      { d:1,  w:"Senin",  t:"21.00", e:"ISM Manufaktur", r:"Mei", i:"md", p:"52,7", c:"50,3", a:"54,0", x:"dn" },
+      { d:2,  w:"Selasa", t:"21.00", e:"JOLTS Lowongan Kerja", r:"Apr", i:"md", p:"6,89 jt", c:"6,79 jt", a:"7,62 jt", x:"dn", big:true, note:"pasar kerja berbalik dari melemah ke mengetat" },
+      { d:3,  w:"Rabu",   t:"19.15", e:"ADP", r:"Mei", i:"md", p:"—", c:"105K", a:"122K", x:"dn" },
+      { d:3,  w:"Rabu",   t:"21.00", e:"ISM Jasa", r:"Mei", i:"md", p:"53,6", c:"53,6", a:"54,5", x:"dn" },
+      { d:5,  w:"Jumat",  t:"19.30", e:"Non-Farm Payrolls", r:"Mei", i:"hi", p:"179K", c:"77K", a:"172K", x:"dn", big:true, note:"emas jatuh 146,50 dolar intraday · DXY ke 99,726" },
+      { d:5,  w:"Jumat",  t:"19.30", e:"Tingkat Pengangguran", r:"Mei", i:"hi", p:"4,3%", c:"4,2%", a:"4,3%", x:"up" },
+      { d:5,  w:"Jumat",  t:"19.30", e:"Upah per Jam y/y", r:"Mei", i:"md", p:"3,6%", c:"3,6%", a:"3,4%", x:"up" },
+      { d:10, w:"Rabu",   t:"19.30", e:"CPI y/y", r:"Mei", i:"hi", p:"3,8%", c:"4,0%", a:"4,2%", x:"dn", note:"puncak inflasi 2026" },
+      { d:10, w:"Rabu",   t:"19.30", e:"Core CPI y/y", r:"Mei", i:"hi", p:"2,8%", c:"2,9%", a:"2,9%", x:"nt" },
+      { d:11, w:"Kamis",  t:"19.30", e:"PPI y/y", r:"Mei", i:"md", p:"6,0%", c:"4,5%", a:"6,5%", x:"dn" },
+      { d:12, w:"Jumat",  t:"21.00", e:"Sentimen Michigan", r:"Jun awal", i:"lo", p:"44,8", c:"47,6", a:"48,9", x:"dn", est:true, note:"dasar sentimen konsumen tahun ini" },
+      { d:17, w:"Rabu",   t:"19.30", e:"Retail Sales m/m", r:"Mei", i:"md", p:"0,4%", c:"−0,1%", a:"0,9%", x:"dn" },
+      { d:18, w:"Kamis",  t:"01.00", e:"FOMC · keputusan + dot plot", r:"rapat 16–17 Jun", i:"hi", p:"3,75%", c:"3,75%", a:"3,75% tahan", x:"nt" },
+      { d:19, w:"Jumat",  t:"—",     e:"Juneteenth · pasar AS tutup", r:"", i:"none", p:"—", c:"—", a:null, x:"nt" },
+      { d:25, w:"Kamis",  t:"19.30", e:"GDP q/q · Q1 final", r:"Q1", i:"lo", p:"1,6%", c:"1,6%", a:"2,1%", x:"dn" },
+      { d:25, w:"Kamis",  t:"19.30", e:"PCE Price Index y/y", r:"Mei", i:"md", p:"3,8%", c:"4,1%", a:"4,1%", x:"nt" },
+      { d:30, w:"Selasa", t:"21.00", e:"JOLTS Lowongan Kerja", r:"Mei", i:"md", p:"7,59 jt", c:"6,82 jt", a:"7,59 jt", x:"dn" }
+    ]},
+
+    "07": { label: "Juli 2026", tz: "daylight time · 08.30 ET = 19.30 WIB", rows: [
+      { d:1,  w:"Rabu",   t:"19.15", e:"ADP", r:"Jun", i:"md", p:"—", c:"122K", a:"98K", x:"up" },
+      { d:1,  w:"Rabu",   t:"21.00", e:"ISM Manufaktur", r:"Jun", i:"md", p:"—", c:"54,0", a:"53,3", x:"up" },
+      { d:2,  w:"Kamis",  t:"19.30", e:"Non-Farm Payrolls", r:"Jun", i:"hi", p:"129K", c:"43K", a:"57K", x:"dn", note:"maju ke Kamis karena libur 3 Juli" },
+      { d:2,  w:"Kamis",  t:"19.30", e:"Tingkat Pengangguran", r:"Jun", i:"hi", p:"4,3%", c:"4,2%", a:"4,2%", x:"nt" },
+      { d:2,  w:"Kamis",  t:"19.30", e:"Upah per Jam y/y", r:"Jun", i:"md", p:"3,4%", c:"3,5%", a:"3,5%", x:"nt" },
+      { d:3,  w:"Jumat",  t:"—",     e:"Hari Kemerdekaan AS · pasar tutup", r:"", i:"none", p:"—", c:"—", a:null, x:"nt", note:"libur pengganti, 4 Juli jatuh Sabtu" },
+      { d:6,  w:"Senin",  t:"21.00", e:"ISM Jasa", r:"Jun", i:"md", p:"—", c:"54,5", a:"54,0", x:"up" },
+      { d:14, w:"Selasa", t:"19.30", e:"CPI y/y", r:"Jun", i:"hi", p:"4,2%", c:"3,8%", a:"3,5%", x:"up" },
+      { d:14, w:"Selasa", t:"19.30", e:"Core CPI y/y", r:"Jun", i:"hi", p:"2,9%", c:"2,9%", a:"2,6%", x:"up" },
+      { d:15, w:"Rabu",   t:"19.30", e:"PPI y/y", r:"Jun", i:"md", p:"6,5%", c:"4,8%", a:"5,5%", x:"dn" },
+      { d:16, w:"Kamis",  t:"19.30", e:"Retail Sales m/m", r:"Jun", i:"md", p:"1,0%", c:"−0,2%", a:"0,2%", x:"dn" },
+      { d:17, w:"Jumat",  t:"21.00", e:"Sentimen Michigan", r:"Jul awal", i:"lo", p:"49,5", c:"51,1", a:"54,4", x:"dn", est:true },
+      { d:30, w:"Kamis",  t:"01.00", e:"FOMC · keputusan", r:"rapat 28–29 Jul", i:"hi", p:"3,75%", c:"3,75%", a:"3,75% tahan", x:"dn", big:true, note:"tiga anggota menolak dan minta naik 25 bp" },
+      { d:30, w:"Kamis",  t:"19.30", e:"GDP q/q · Q2 awal", r:"Q2", i:"lo", p:"2,1%", c:"1,7%", a:"1,5%", x:"up" },
+      { d:30, w:"Kamis",  t:"19.30", e:"PCE Price Index y/y", r:"Jun", i:"md", p:"4,1%", c:"4,5%", a:"3,7%", x:"up" }
+    ]},
+
+    "08": { label: "Agustus 2026", tz: "daylight time · 08.30 ET = 19.30 WIB", rows: [
+      { d:3,  w:"Senin",  t:"21.00", e:"ISM Manufaktur", r:"Jul", i:"md", p:"53,3", c:"53,0", a:"55,6", x:"dn" },
+      { d:4,  w:"Selasa", t:"21.00", e:"JOLTS Lowongan Kerja", r:"Jun", i:"md", p:"7,54 jt", c:"6,95 jt", a:"7,36 jt", x:"dn" },
+      { d:5,  w:"Rabu",   t:"19.15", e:"ADP", r:"Jul", i:"md", p:"98K", c:"−12K", a:"44K", x:"dn" },
+      { d:5,  w:"Rabu",   t:"21.00", e:"ISM Jasa", r:"Jul", i:"md", p:"54,0", c:"54,3", a:"54,1", x:"up" },
+      { d:7,  w:"Jumat",  t:"19.30", e:"Non-Farm Payrolls", r:"Jul", i:"hi", p:"20K", c:"41K", a:"−23K", x:"up" },
+      { d:7,  w:"Jumat",  t:"19.30", e:"Tingkat Pengangguran", r:"Jul", i:"hi", p:"4,2%", c:"4,2%", a:"4,1%", x:"dn" },
+      { d:7,  w:"Jumat",  t:"19.30", e:"Upah per Jam y/y", r:"Jul", i:"md", p:"3,5%", c:"3,5%", a:"3,2%", x:"up" },
+      { d:12, w:"Rabu",   t:"19.30", e:"CPI y/y", r:"Jul", i:"hi", p:"3,5%", c:"2,7%", a:"3,4%", x:"dn" },
+      { d:12, w:"Rabu",   t:"19.30", e:"Core CPI y/y", r:"Jul", i:"hi", p:"2,6%", c:"2,6%", a:"2,5%", x:"up" },
+      { d:13, w:"Kamis",  t:"19.30", e:"PPI y/y", r:"Jul", i:"md", p:"5,5%", c:"6,1%", a:"4,7%", x:"up" },
+      { d:14, w:"Jumat",  t:"19.30", e:"Retail Sales m/m", r:"Jul", i:"md", p:"0,2%", c:"0,0%", a:"−0,6%", x:"up", note:"penurunan berarti pertama tahun ini" },
+      { d:14, w:"Jumat",  t:"21.00", e:"Sentimen Michigan", r:"Agu awal", i:"lo", p:"55,2", c:"56,4", a:"51,0", x:"up", est:true, big:true },
+      { d:26, w:"Rabu",   t:"19.30", e:"GDP q/q · Q2 revisi", r:"Q2", i:"lo", p:"1,5%", c:"1,5%", a:"1,5%", x:"nt" },
+      { d:26, w:"Rabu",   t:"19.30", e:"PCE Price Index y/y", r:"Jul", i:"md", p:"3,7%", c:"3,0%", a:"3,7%", x:"dn" },
+      { d:28, w:"Jumat",  t:"—",     e:"Jackson Hole · pidato Warsh", r:"bukan rilis data", i:"hi", p:"—", c:"—", a:"emas −2,75%", x:"dn", speech:true, big:true, note:"peluang hike September naik dari 1:3 jadi di atas 50%" }
+    ]},
+
+    "09": { label: "September 2026", tz: "daylight time · 08.30 ET = 19.30 WIB", today: 10, rows: [
+      { d:1,  w:"Selasa", t:"21.00", e:"ISM Manufaktur", r:"Agu", i:"md", p:"55,6", c:"55,2", a:"54,6", x:"up" },
+      { d:1,  w:"Selasa", t:"21.00", e:"JOLTS Lowongan Kerja", r:"Jul", i:"md", p:"7,18 jt", c:"7,50 jt", a:"7,27 jt", x:"up" },
+      { d:2,  w:"Rabu",   t:"19.15", e:"ADP", r:"Agu", i:"md", p:"44K", c:"14K", a:"38K", x:"dn" },
+      { d:3,  w:"Kamis",  t:"21.00", e:"ISM Jasa", r:"Agu", i:"md", p:"54,1", c:"53,8", a:"55,4", x:"dn" },
+      { d:4,  w:"Jumat",  t:"19.30", e:"Non-Farm Payrolls", r:"Agu", i:"hi", p:"21K", c:"41K", a:"162K", x:"dn", big:true, note:"terbanyak dalam lima bulan · mengeraskan peluang hike" },
+      { d:4,  w:"Jumat",  t:"19.30", e:"Tingkat Pengangguran", r:"Agu", i:"hi", p:"4,1%", c:"4,1%", a:"4,1%", x:"nt" },
+      { d:4,  w:"Jumat",  t:"19.30", e:"Upah per Jam y/y", r:"Agu", i:"md", p:"3,2%", c:"3,4%", a:"3,1%", x:"up" },
+      { d:7,  w:"Senin",  t:"—",     e:"Labor Day · pasar AS tutup", r:"", i:"none", p:"—", c:"—", a:null, x:"nt" },
+      { d:10, w:"Kamis",  t:"19.30", e:"PPI m/m", r:"Agu", i:"hi", p:"0%", c:"0,4%", a:null, x:"?" },
+      { d:10, w:"Kamis",  t:"19.30", e:"PPI y/y", r:"Agu", i:"md", p:"4,7%", c:"5,3%", a:null, x:"?", note:"konsensus justru naik, bukan turun" },
+      { d:10, w:"Kamis",  t:"19.30", e:"Core PPI m/m", r:"Agu", i:"md", p:"0,2%", c:"0,3%", a:null, x:"?" },
+      { d:10, w:"Kamis",  t:"19.30", e:"Core PPI y/y", r:"Agu", i:"lo", p:"4,2%", c:"4,6%", a:null, x:"?" },
+      { d:10, w:"Kamis",  t:"19.30", e:"Klaim Pengangguran Awal", r:"pekan 5 Sep", i:"md", p:"206K", c:"205K", a:null, x:"?" },
+      { d:11, w:"Jumat",  t:"19.30", e:"CPI y/y", r:"Agu", i:"hi", p:"3,4%", c:"3,4%", a:null, x:"?", big:true, note:"rilis penentu sebelum FOMC" },
+      { d:11, w:"Jumat",  t:"19.30", e:"Core CPI y/y", r:"Agu", i:"hi", p:"2,5%", c:"2,4%", a:null, x:"?" },
+      { d:11, w:"Jumat",  t:"21.00", e:"Sentimen Michigan", r:"Sep awal", i:"lo", p:"51,0", c:"51,5", a:null, x:"?" },
+      { d:16, w:"Rabu",   t:"19.30", e:"Retail Sales m/m", r:"Agu", i:"md", p:"−0,6%", c:"0,3%", a:null, x:"?" },
+      { d:17, w:"Kamis",  t:"01.00", e:"FOMC · keputusan + dot plot", r:"rapat 15–16 Sep", i:"hi", p:"3,75%", c:"4,00%", a:null, x:"?", big:true, note:"konsensus memberi harga kenaikan 25 bp · kenaikan pertama di bawah Warsh" },
+      { d:29, w:"Selasa", t:"21.00", e:"JOLTS Lowongan Kerja", r:"Agu", i:"md", p:"7,27 jt", c:"7,20 jt", a:null, x:"?" },
+      { d:30, w:"Rabu",   t:"19.15", e:"ADP", r:"Sep", i:"md", p:"38K", c:"75K", a:null, x:"?" },
+      { d:30, w:"Rabu",   t:"19.30", e:"Core PCE y/y", r:"Agu", i:"hi", p:"3,3%", c:"—", a:null, x:"?" },
+      { d:30, w:"Rabu",   t:"19.30", e:"PCE Price Index y/y", r:"Agu", i:"md", p:"3,7%", c:"—", a:null, x:"?" },
+      { d:30, w:"Rabu",   t:"19.30", e:"GDP q/q · Q2 final", r:"Q2", i:"lo", p:"1,5%", c:"1,5%", a:null, x:"?" }
+    ]},
+
+    "10": { label: "Oktober 2026", tz: "daylight time berakhir 1 Nov · sejak itu 08.30 ET = 20.30 WIB", rows: [
+      { d:1,  w:"Kamis",  t:"21.00", e:"ISM Manufaktur", r:"Sep", i:"md", p:"54,6", c:"54,0", a:null, x:"?" },
+      { d:2,  w:"Jumat",  t:"19.30", e:"Non-Farm Payrolls", r:"Sep", i:"hi", p:"162K", c:"120K", a:null, x:"?", big:true, note:"konsensus jauh lebih tinggi dari biasanya · ruang kejutan ke atas menyempit" },
+      { d:2,  w:"Jumat",  t:"19.30", e:"Tingkat Pengangguran", r:"Sep", i:"hi", p:"4,1%", c:"4,3%", a:null, x:"?" },
+      { d:2,  w:"Jumat",  t:"19.30", e:"Upah per Jam m/m", r:"Sep", i:"md", p:"0,3%", c:"0,2%", a:null, x:"?" },
+      { d:5,  w:"Senin",  t:"21.00", e:"ISM Jasa", r:"Sep", i:"md", p:"55,4", c:"—", a:null, x:"?" },
+      { d:9,  w:"Jumat",  t:"21.00", e:"Sentimen Michigan", r:"Okt awal", i:"lo", p:"—", c:"—", a:null, x:"?", est:true },
+      { d:14, w:"Rabu",   t:"19.30", e:"CPI y/y", r:"Sep", i:"hi", p:"—", c:"—", a:null, x:"?" },
+      { d:14, w:"Rabu",   t:"19.30", e:"Core CPI y/y", r:"Sep", i:"hi", p:"—", c:"—", a:null, x:"?" },
+      { d:15, w:"Kamis",  t:"19.30", e:"PPI y/y", r:"Sep", i:"md", p:"—", c:"—", a:null, x:"?" },
+      { d:15, w:"Kamis",  t:"19.30", e:"Retail Sales m/m", r:"Sep", i:"md", p:"—", c:"—", a:null, x:"?" },
+      { d:29, w:"Kamis",  t:"01.00", e:"FOMC · keputusan", r:"rapat 27–28 Okt", i:"hi", p:"—", c:"—", a:null, x:"?", big:true },
+      { d:29, w:"Kamis",  t:"19.30", e:"GDP q/q · Q3 awal", r:"Q3", i:"lo", p:"—", c:"—", a:null, x:"?" },
+      { d:29, w:"Kamis",  t:"19.30", e:"PCE Price Index y/y", r:"Sep", i:"md", p:"—", c:"—", a:null, x:"?" }
+    ]}
+  };
+
+  var MONTHS = [
+    ["01", "Jan", false], ["02", "Feb", true], ["03", "Mar", true], ["04", "Apr", true],
+    ["05", "Mei", true],  ["06", "Jun", true], ["07", "Jul", true], ["08", "Agu", true],
+    ["09", "Sep", true],  ["10", "Okt", true], ["11", "Nov", false], ["12", "Des", false]
+  ];
+
+  var MARK = { dn: "▼", up: "▲", nt: "•", "?": "?" };
+  var MARKCLASS = { dn: "dn", up: "up", nt: "nt", "?": "nt" };
+
+  var current = "09";
+  var monthsEl = document.getElementById("months");
+  var rowsEl = document.getElementById("rows");
+  var onlyHigh = document.getElementById("onlyHigh");
+  var hideEst = document.getElementById("hideEst");
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (m) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m];
+    });
+  }
+
+  MONTHS.forEach(function (m) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.textContent = m[1];
+    b.setAttribute("aria-pressed", m[0] === current ? "true" : "false");
+    if (!m[2]) {
+      b.disabled = true;
+      b.title = "Belum ada data untuk bulan ini";
+    } else {
+      b.addEventListener("click", function () {
+        current = m[0];
+        Array.prototype.forEach.call(monthsEl.children, function (c) {
+          c.setAttribute("aria-pressed", "false");
+        });
+        b.setAttribute("aria-pressed", "true");
+        render();
+      });
+    }
+    monthsEl.appendChild(b);
+  });
+
+  function render() {
+    var month = CAL[current];
+    var rows = month.rows.filter(function (r) {
+      if (onlyHigh.checked && r.i !== "hi") return false;
+      if (hideEst.checked && r.est) return false;
+      return true;
+    });
+
+    if (!rows.length) {
+      rowsEl.innerHTML = '<tr><td colspan="8" class="empty">Tidak ada rilis yang cocok dengan saringan ini.</td></tr>';
+      return;
+    }
+
+    var IMPLABEL = { hi: "TINGGI", md: "SEDANG", lo: "RENDAH", none: "LIBUR" };
+    var html = "";
+    var lastDay = null;
+
+    rows.forEach(function (r) {
+      if (r.d !== lastDay) {
+        lastDay = r.d;
+        var isToday = month.today === r.d;
+        html += '<tr class="day' + (isToday ? " today" : "") + '"><td colspan="8">' +
+          esc(r.w) + ", " + r.d + " " + esc(month.label) +
+          (isToday ? " · hari ini" : "") + "</td></tr>";
+      }
+
+      var released = r.a !== null && r.a !== undefined;
+      var cls = "event" +
+        (r.big ? " big" : "") +
+        (r.speech ? " speech" : "") +
+        (r.i === "none" ? " holiday" : "");
+
+      var actCell = released
+        ? '<td class="n act"><span class="val ' + MARKCLASS[r.x] + '">' + esc(r.a) + "</span></td>"
+        : '<td class="n pending">—</td>';
+
+      var stCell = r.i === "none"
+        ? '<td class="st"></td>'
+        : released
+          ? '<td class="st" title="sudah rilis">&#10003;</td>'
+          : '<td class="st" title="belum rilis"><span class="wait"></span></td>';
+
+      html += '<tr class="' + cls + '">' +
+        '<td class="time' + (r.est ? " est" : "") + '">' + esc(r.t) + "</td>" +
+        stCell +
+        '<td class="ev">' + esc(r.e) +
+          (r.r ? ' <span class="ref">(' + esc(r.r) + ")</span>" : "") +
+          (r.est ? '<span class="tag">pola</span>' : "") +
+          (r.note ? '<br><span class="ref">' + esc(r.note) + "</span>" : "") +
+        "</td>" +
+        '<td class="imp"><span class="chip ' + r.i + '">' + IMPLABEL[r.i] + "</span></td>" +
+        '<td class="n">' + esc(r.p) + "</td>" +
+        '<td class="n">' + esc(r.c) + "</td>" +
+        actCell +
+        '<td class="x">' +
+          (r.i === "none" ? "" : '<span class="mark ' + MARKCLASS[r.x] + '">' + MARK[r.x] + "</span>") +
+        "</td>" +
+        "</tr>";
+    });
+
+    rowsEl.innerHTML = html;
+  }
+
+  onlyHigh.addEventListener("change", render);
+  hideEst.addEventListener("change", render);
+  render();
+})();
+</script>
+
+</body>
+</html>
