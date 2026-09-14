@@ -1,0 +1,40 @@
+name: Update data news
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-news
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Tarik kalender dan perbarui JSON
+        run: python scripts/update.py
+
+      - name: Commit kalau ada perubahan
+        run: |
+          if git diff --quiet -- data/events.json; then
+            echo "Tidak ada angka baru."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/events.json
+          git commit -m "Update data news $(TZ=Asia/Jakarta date '+%d %b %H:%M') WIB"
+          git pull --rebase
+          git push

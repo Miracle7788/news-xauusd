@@ -12,7 +12,8 @@
 <title>Peta News XAUUSD</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"></noscript>
 
 <style>
   :root {
@@ -679,12 +680,11 @@
     <h1>Peta News XAUUSD</h1>
     <p class="standfirst">Dibuka dengan angkanya: previous, perkiraan, dan aktual untuk lima belas rilis utama sepanjang 2026. Di bawahnya ritme rilis AS yang berulang tiap bulan lengkap dengan jam WIB-nya, lalu rekap apa yang benar-benar terjadi pada emas.</p>
     <div class="readout">
-      <div><span class="k">Harga saat ini</span><span class="v gold">4.409</span></div>
-      <div><span class="k">Per</span><span class="v">10 Sep 2026</span></div>
+      <div><span class="k">Data berubah</span><span class="v gold" id="mUpdated">10 Sep 2026</span></div>
       <div><span class="k">Puncak 2026</span><span class="v">5.589 · 28 Jan</span></div>
       <div><span class="k">Terendah 2026</span><span class="v">±3.990 · Jun</span></div>
       <div><span class="k">Ketua Fed</span><span class="v">Kevin Warsh</span></div>
-      <div><span class="k">FOMC berikutnya</span><span class="v">15–16 Sep</span></div>
+      <div><span class="k">FOMC berikutnya</span><span class="v" id="mFomc">17 Sep 01.00 WIB</span></div>
     </div>
   </header>
 
@@ -708,10 +708,10 @@
       <div><span class="d">Apr</span><span class="t"><strong>PPI April · 6,0% vs 4,4%</strong> — guncangan energi Hormuz masuk ke data harga produsen. Lonjakan terbesar di seluruh seri tahun ini.</span></div>
       <div><span class="d">Mar</span><span class="t"><strong>NFP Februari · −92K vs +79K</strong> — satu-satunya kejutan dovish berskala besar di paruh pertama. Emas menguat, tapi tidak bertahan.</span></div>
       <div><span class="d">28 Agu</span><span class="t"><strong>Jackson Hole</strong> — bukan rilis data. Warsh menyebut inflasi masih terlalu tinggi; emas −2,75% dalam satu hari. Pidato bisa memukul lebih keras dari angka.</span></div>
-      <div><span class="d">10 Sep</span><span class="t"><strong>PPI Agustus · konsensus 5,3% dari 4,7%</strong> — belum rilis saat halaman ini ditulis. Pasar memberi harga inflasi produsen yang kembali memanas; hasil di bawah 5,3% akan melemahkan narasi kenaikan suku bunga tepat sehari sebelum CPI.</span></div>
+      <div><span class="d">10 Sep</span><span class="t"><strong>PPI Agustus · 5,4% vs 5,3%</strong> — inflasi produsen kembali memanas, sedikit di atas konsensus yang memang sudah tinggi. Sehari kemudian CPI keluar persis konsensus 3,4%, jadi narasi kenaikan suku bunga masuk FOMC tanpa terbantah.</span></div>
     </div>
 
-    <p><strong>Pola yang layak dicatat:</strong> dari delapan rilis NFP 2026, enam mengalahkan perkiraan. Rata-rata aktual 87K melawan rata-rata perkiraan 57K — konsensus pasar terlalu pesimistis sepanjang tahun, dan bias itulah yang berulang kali memukul emas. Kalau kamu harus menebak arah kejutan NFP tanpa informasi lain, sejarah 2026 memihak sisi kuat.</p>
+    <p><strong>Pola yang layak dicatat:</strong> dari <span id="nfpTotal">8</span> rilis NFP 2026, <span id="nfpBeat">6</span> mengalahkan perkiraan. Rata-rata aktual <span id="nfpAct">87K</span> melawan rata-rata perkiraan <span id="nfpCons">57K</span> — konsensus pasar terlalu pesimistis sepanjang tahun, dan bias itulah yang berulang kali memukul emas. Kalau kamu harus menebak arah kejutan NFP tanpa informasi lain, sejarah 2026 memihak sisi kuat.</p>
 
     <div class="datagrid">
 
@@ -721,7 +721,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="non farm payrolls">
             <tr><td class="m">Jan</td><td class="v">48</td><td class="v">89</td><td class="v act">130</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr class="shock"><td class="m">Feb</td><td class="v">126</td><td class="v">79</td><td class="v act">−92</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr class="shock"><td class="m">Mar</td><td class="v">−133</td><td class="v">−6</td><td class="v act">178</td><td class="g"><i class="mark dn">▼</i></td></tr>
@@ -742,7 +742,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="unemployment rate">
             <tr><td class="m">Jan</td><td class="v">4,4</td><td class="v">4,2</td><td class="v act">4,3</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr><td class="m">Feb</td><td class="v">4,3</td><td class="v">4,2</td><td class="v act">4,4</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr><td class="m">Mar</td><td class="v">4,4</td><td class="v">4,6</td><td class="v act">4,3</td><td class="g"><i class="mark dn">▼</i></td></tr>
@@ -763,7 +763,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="inflation rate yoy">
             <tr><td class="m">Jan</td><td class="v">2,7</td><td class="v">2,5</td><td class="v act">2,4</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr><td class="m">Feb</td><td class="v">2,4</td><td class="v">2,2</td><td class="v act">2,4</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr class="shock"><td class="m">Mar</td><td class="v">2,4</td><td class="v">2,3</td><td class="v act">3,3</td><td class="g"><i class="mark dn">▼</i></td></tr>
@@ -775,7 +775,7 @@
           </tbody>
         </table>
         </div>
-        <footer>Baris Agustus rilis 11 September 19:30 WIB. Puncak inflasi tahun ini 4,2% pada Mei, lalu mereda.</footer>
+        <footer>Puncak inflasi tahun ini 4,2% pada Mei, lalu mereda ke kisaran 3,4%.</footer>
       </article>
 
       <!-- Core CPI -->
@@ -784,7 +784,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="core inflation rate yoy">
             <tr><td class="m">Jan</td><td class="v">2,6</td><td class="v">2,6</td><td class="v act">2,5</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr><td class="m">Feb</td><td class="v">2,5</td><td class="v">2,6</td><td class="v act">2,5</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr><td class="m">Mar</td><td class="v">2,5</td><td class="v">2,5</td><td class="v act">2,6</td><td class="g"><i class="mark dn">▼</i></td></tr>
@@ -805,7 +805,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="ppi yoy">
             <tr><td class="m">Jan</td><td class="v">3,0</td><td class="v">3,3</td><td class="v act">2,9</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr><td class="m">Feb</td><td class="v">2,9</td><td class="v">2,8</td><td class="v act">3,4</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr><td class="m">Mar</td><td class="v">3,4</td><td class="v">3,6</td><td class="v act">4,0</td><td class="g"><i class="mark dn">▼</i></td></tr>
@@ -816,7 +816,7 @@
           </tbody>
         </table>
         </div>
-        <footer>Rilis Agustus baru jatuh 10 September 19:30 WIB dan belum keluar. Konsensusnya 5,3% — naik dari 4,7%, arah yang berlawanan dengan tren empat bulan terakhir.</footer>
+        <footer>Setelah puncak 6,5% di Mei, PPI sempat turun ke 4,7% sebelum memanas lagi di Agustus.</footer>
       </article>
 
       <!-- PCE -->
@@ -825,7 +825,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="pce price index yoy">
             <tr><td class="m">Jan</td><td class="v">2,9</td><td class="v">2,9</td><td class="v act">2,8</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr><td class="m">Feb</td><td class="v">2,8</td><td class="v">2,8</td><td class="v act">2,8</td><td class="g"><i class="mark nt">•</i></td></tr>
             <tr class="shock"><td class="m">Mar</td><td class="v">2,8</td><td class="v">3,0</td><td class="v act">3,5</td><td class="g"><i class="mark dn">▼</i></td></tr>
@@ -845,7 +845,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="adp employment change">
             <tr><td class="m">Jan</td><td class="v">41</td><td class="v">7</td><td class="v act">22</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr><td class="m">Feb</td><td class="v">22</td><td class="v">11</td><td class="v act">63</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr><td class="m">Mar</td><td class="v">63</td><td class="v">20</td><td class="v act">62</td><td class="g"><i class="mark dn">▼</i></td></tr>
@@ -866,7 +866,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="jolts job openings">
             <tr><td class="m">Jan</td><td class="v">6,55</td><td class="v">7,12</td><td class="v act">6,95</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr><td class="m">Feb</td><td class="v">7,24</td><td class="v">6,93</td><td class="v act">6,88</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr><td class="m">Mar</td><td class="v">6,92</td><td class="v">6,91</td><td class="v act">6,87</td><td class="g"><i class="mark up">▲</i></td></tr>
@@ -886,7 +886,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="average hourly earnings yoy">
             <tr><td class="m">Jan</td><td class="v">3,8</td><td class="v">3,7</td><td class="v act">3,7</td><td class="g"><i class="mark nt">•</i></td></tr>
             <tr><td class="m">Feb</td><td class="v">3,7</td><td class="v">3,7</td><td class="v act">3,8</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr><td class="m">Mar</td><td class="v">3,8</td><td class="v">3,8</td><td class="v act">3,5</td><td class="g"><i class="mark up">▲</i></td></tr>
@@ -907,7 +907,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="ism manufacturing pmi">
             <tr class="shock"><td class="m">Jan</td><td class="v">47,9</td><td class="v">47,4</td><td class="v act">52,6</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr><td class="m">Feb</td><td class="v">52,6</td><td class="v">53,0</td><td class="v act">52,4</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr><td class="m">Mar</td><td class="v">52,4</td><td class="v">52,2</td><td class="v act">52,7</td><td class="g"><i class="mark dn">▼</i></td></tr>
@@ -928,7 +928,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="ism services pmi">
             <tr><td class="m">Jan</td><td class="v">53,8</td><td class="v">51,8</td><td class="v act">53,8</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr class="shock"><td class="m">Feb</td><td class="v">53,8</td><td class="v">52,3</td><td class="v act">56,1</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr><td class="m">Mar</td><td class="v">56,1</td><td class="v">54,8</td><td class="v act">54,0</td><td class="g"><i class="mark up">▲</i></td></tr>
@@ -949,7 +949,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="retail sales mom">
             <tr><td class="m">Jan</td><td class="v">0,0</td><td class="v">−0,3</td><td class="v act">−0,2</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr><td class="m">Feb</td><td class="v">−0,1</td><td class="v">0,3</td><td class="v act">0,6</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr class="shock"><td class="m">Mar</td><td class="v">0,7</td><td class="v">0,6</td><td class="v act">1,7</td><td class="g"><i class="mark dn">▼</i></td></tr>
@@ -969,7 +969,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Bln</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="michigan consumer sentiment prel">
             <tr><td class="m">Jan</td><td class="v">52,9</td><td class="v">54,3</td><td class="v act">54,0</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr><td class="m">Feb</td><td class="v">56,4</td><td class="v">55,1</td><td class="v act">57,3</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr><td class="m">Mar</td><td class="v">56,6</td><td class="v">56,8</td><td class="v act">55,5</td><td class="g"><i class="mark up">▲</i></td></tr>
@@ -990,7 +990,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Rapat</th><th class="r">Konsensus</th><th class="r">Hasil</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="fed interest rate decision">
             <tr><td class="m">28 Jan</td><td class="v">3,75</td><td class="v act">3,75 · tahan</td><td class="g"><i class="mark nt">•</i></td></tr>
             <tr><td class="m">18 Mar</td><td class="v">3,75</td><td class="v act">3,75 · tahan</td><td class="g"><i class="mark nt">•</i></td></tr>
             <tr><td class="m">29 Apr</td><td class="v">3,75</td><td class="v act">3,75 · tahan</td><td class="g"><i class="mark nt">•</i></td></tr>
@@ -1009,7 +1009,7 @@
         <div class="scroll" style="border:0; border-radius:0; box-shadow:none;">
         <table>
           <thead><tr><th>Rilis</th><th class="r">Prev</th><th class="r">Perkiraan</th><th class="r">Aktual</th><th class="c">XAU</th></tr></thead>
-          <tbody>
+          <tbody data-key="gdp">
             <tr><td class="m">Q1 awal</td><td class="v">0,5</td><td class="v">−0,2</td><td class="v act">2,0</td><td class="g"><i class="mark dn">▼</i></td></tr>
             <tr><td class="m">Q1 revisi</td><td class="v">2,0</td><td class="v">2,0</td><td class="v act">1,6</td><td class="g"><i class="mark up">▲</i></td></tr>
             <tr><td class="m">Q1 final</td><td class="v">1,6</td><td class="v">1,6</td><td class="v act">2,1</td><td class="g"><i class="mark dn">▼</i></td></tr>
@@ -1360,7 +1360,7 @@
 
   <!-- ============ 6. BULAN BERJALAN ============ -->
   <section>
-    <h2>7 · September 2026 <span class="h2-note">Sisa agenda bulan berjalan</span></h2>
+    <h2>7 · September 2026 <span class="h2-note">Catatan ditulis 10 Sep, sebelum rilis · angka terbaru ada di kalender</span></h2>
 
     <div class="now">
       <h3>Tiga hari yang menentukan arah kuartal</h3>
@@ -1400,5 +1400,86 @@
 
 </div>
 
+<script>
+(function () {
+  "use strict";
+  var BLN = ["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agu","Sep","Okt","Nov","Des"];
+  var MARK = { dn: "▼", up: "▲", nt: "•", "?": "?" };
+  var MC = { dn: "dn", up: "up", nt: "nt", "?": "nt" };
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (m) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m];
+    });
+  }
+  function num(v) {
+    if (v == null) return null;
+    var m = String(v).replace("−", "-").replace(",", ".").match(/-?\d+(\.\d+)?/);
+    return m ? parseFloat(m[0]) : null;
+  }
+  function todayWIB() { return new Date(Date.now() + 7 * 3600 * 1000).toISOString().slice(0, 10); }
+  function dm(iso) { var p = iso.split("-"); return +p[2] + " " + BLN[+p[1] - 1]; }
+  function clean(v) { return esc(String(v).replace(/ jt$/, "")); }
+
+  function row(label, ev, withPrev) {
+    var pending = ev.a === null || ev.a === undefined;
+    return '<tr' + (ev.big ? ' class="shock"' : '') + '>' +
+      '<td class="m">' + esc(label) + '</td>' +
+      (withPrev ? '<td class="v">' + clean(ev.p) + '</td>' : '') +
+      '<td class="v">' + clean(ev.c) + '</td>' +
+      '<td class="v act">' + (pending ? '—' : clean(ev.a)) + '</td>' +
+      '<td class="g"><i class="mark ' + MC[ev.x] + '">' + MARK[ev.x] + '</i></td></tr>';
+  }
+
+  function fill(events) {
+    var tbodies = document.querySelectorAll("tbody[data-key]");
+    Array.prototype.forEach.call(tbodies, function (tb) {
+      var key = tb.getAttribute("data-key");
+      var list = events.filter(function (e) {
+        return key === "gdp" ? e.key.indexOf("gdp") === 0 : e.key === key;
+      });
+      var done = list.filter(function (e) { return e.a !== null && e.a !== undefined; });
+      var next = list.filter(function (e) { return (e.a === null || e.a === undefined) && e.c && e.c !== "—"; }).slice(0, 1);
+      var show = done.concat(next);
+      if (!show.length) return;
+
+      var html = show.map(function (ev) {
+        if (key === "fed interest rate decision") return row(dm(ev.date), ev, false);
+        if (key === "gdp") return row(ev.e.split(" · ")[1] || ev.e, ev, true);
+        return row((ev.r || "").split(" ")[0], ev, true);
+      }).join("");
+      tb.innerHTML = html;
+    });
+  }
+
+  function stats(events) {
+    var nfp = events.filter(function (e) { return e.key === "non farm payrolls" && e.a != null && num(e.c) != null; });
+    if (!nfp.length) return;
+    var beat = nfp.filter(function (e) { return num(e.a) > num(e.c); }).length;
+    var sa = 0, sc = 0;
+    nfp.forEach(function (e) { sa += num(e.a); sc += num(e.c); });
+    document.getElementById("nfpTotal").textContent = nfp.length;
+    document.getElementById("nfpBeat").textContent = beat;
+    document.getElementById("nfpAct").textContent = Math.round(sa / nfp.length) + "K";
+    document.getElementById("nfpCons").textContent = Math.round(sc / nfp.length) + "K";
+  }
+
+  function masthead(doc) {
+    var w = new Date(new Date(doc.updated).getTime() + 7 * 3600 * 1000);
+    document.getElementById("mUpdated").textContent = w.getUTCDate() + " " + BLN[w.getUTCMonth()] + " " +
+      String(w.getUTCHours()).padStart(2, "0") + "." + String(w.getUTCMinutes()).padStart(2, "0") + " WIB";
+    var today = todayWIB();
+    var f = doc.events.filter(function (e) {
+      return e.key === "fed interest rate decision" && e.a == null && e.date >= today;
+    })[0];
+    if (f) document.getElementById("mFomc").textContent = dm(f.date) + " " + f.t + " WIB";
+  }
+
+  fetch("data/events.json", { cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (doc) { fill(doc.events); stats(doc.events); masthead(doc); })
+    .catch(function () { /* tetap tampilkan tabel statis bawaan halaman */ });
+})();
+</script>
 </body>
 </html>
