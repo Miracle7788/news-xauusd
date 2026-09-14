@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
+    inputs:
+      test_telegram:
+        description: "Kirim pesan uji ke Telegram"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -26,6 +31,8 @@ jobs:
 
       - name: Tarik kalender dan perbarui JSON
         run: python scripts/update.py
+        env:
+          NOTIFY_FILE: ${{ runner.temp }}/notify.json
 
       - name: Commit kalau ada perubahan
         run: |
@@ -42,3 +49,11 @@ jobs:
           gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
         env:
           GH_TOKEN: ${{ github.token }}
+
+      - name: Kirim notifikasi Telegram
+        run: python scripts/notify.py
+        env:
+          NOTIFY_FILE: ${{ runner.temp }}/notify.json
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TEST_TELEGRAM: ${{ inputs.test_telegram }}

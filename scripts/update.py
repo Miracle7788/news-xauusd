@@ -6,6 +6,7 @@ File JSON hanya ditulis kalau ada angka yang berubah, supaya tidak ada commit ko
 
 import datetime as dt
 import json
+import os
 import pathlib
 import re
 import sys
@@ -162,6 +163,12 @@ def main():
     doc = json.loads(DATA.read_text(encoding="utf-8"))
     events = doc["events"]
     changed = []
+    released = []
+    now_wib = dt.datetime.now(WIB)
+
+    def fresh(when):
+        # Hanya rilis 6 jam terakhir yang dinotifikasi, supaya isi ulang data lama tidak memicu spam.
+        return dt.timedelta(minutes=-10) <= now_wib - when <= dt.timedelta(hours=6)
 
     for row in rows:
         key = row["event"]
@@ -199,6 +206,8 @@ def main():
             if key.startswith("gdp") and row["ref"]:
                 ev["e"] = f'{name.split(" · ")[0]} · {row["ref"].upper()} {name.split(" · ")[1]}'
             events.append(ev)
+            if ev["a"] is not None and fresh(when):
+                released.append(ev)
             changed.append(f'+ {ev["date"]} {ev["e"]}')
             continue
 
@@ -217,8 +226,15 @@ def main():
         before = {k: match.get(k) for k in new}
         if before != new or match.get("est"):
             match.update(new)
+            if new["a"] is not None and fresh(when):
+                released.append(match)
             match.pop("est", None)
             changed.append(f'~ {match["date"]} {match["e"]}: {before} -> {new}')
+
+    notify_file = os.environ.get("NOTIFY_FILE")
+    if notify_file and released:
+        pathlib.Path(notify_file).write_text(json.dumps(released, ensure_ascii=False), encoding="utf-8")
+        print(f"{len(released)} rilis baru dicatat untuk notifikasi.")
 
     if not changed:
         print(f"Tidak ada perubahan ({len(rows)} baris dibaca).")
