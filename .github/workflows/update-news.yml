@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: update-news
@@ -38,3 +39,6 @@ jobs:
           git commit -m "Update data news $(TZ=Asia/Jakarta date '+%d %b %H:%M') WIB"
           git pull --rebase
           git push
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+        env:
+          GH_TOKEN: ${{ github.token }}
