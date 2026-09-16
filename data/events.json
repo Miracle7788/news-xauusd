@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-16T00:01+07:00",
+ "updated": "2026-09-16T08:27+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -1872,7 +1872,7 @@
    "e": "CPI y/y",
    "r": "Sep",
    "i": "hi",
-   "p": "—",
+   "p": "3,4%",
    "c": "—",
    "a": null,
    "x": "?"
@@ -1884,7 +1884,31 @@
    "e": "Core CPI y/y",
    "r": "Sep",
    "i": "hi",
-   "p": "—",
+   "p": "2,4%",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-10-14",
+   "t": "19.30",
+   "key": "core inflation rate mom",
+   "e": "Core CPI m/m",
+   "r": "Sep",
+   "i": "hi",
+   "p": "0,3%",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-10-14",
+   "t": "19.30",
+   "key": "inflation rate mom",
+   "e": "CPI m/m",
+   "r": "Sep",
+   "i": "hi",
+   "p": "0,4%",
    "c": "—",
    "a": null,
    "x": "?"
