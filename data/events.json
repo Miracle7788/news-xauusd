@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-16T08:27+07:00",
+ "updated": "2026-09-16T23:58+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -1628,10 +1628,10 @@
    "e": "Retail Sales m/m",
    "r": "Agu",
    "i": "md",
-   "p": "−0,6%",
+   "p": "−0,5%",
    "c": "0,8%",
-   "a": null,
-   "x": "?"
+   "a": "1,2%",
+   "x": "dn"
   },
   {
    "date": "2026-09-17",
