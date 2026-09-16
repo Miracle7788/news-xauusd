@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-16T23:58+07:00",
+ "updated": "2026-09-17T02:59+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -1642,8 +1642,8 @@
    "i": "hi",
    "p": "3,75%",
    "c": "4%",
-   "a": null,
-   "x": "?",
+   "a": "4%",
+   "x": "nt",
    "note": "konsensus memberi harga kenaikan 25 bp · kenaikan pertama di bawah Warsh",
    "big": true
   },
