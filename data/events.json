@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-17T02:59+07:00",
+ "updated": "2026-09-17T08:10+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -1920,6 +1920,42 @@
    "e": "PPI y/y",
    "r": "Sep",
    "i": "md",
+   "p": "5,4%",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-10-15",
+   "t": "19.30",
+   "key": "ppi mom",
+   "e": "PPI m/m",
+   "r": "Sep",
+   "i": "hi",
+   "p": "0,4%",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-10-15",
+   "t": "19.30",
+   "key": "core ppi mom",
+   "e": "Core PPI m/m",
+   "r": "Sep",
+   "i": "md",
+   "p": "0,2%",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-10-15",
+   "t": "19.30",
+   "key": "initial jobless claims",
+   "e": "Klaim Pengangguran Awal",
+   "r": "pekan 10 Okt",
+   "i": "md",
    "p": "—",
    "c": "—",
    "a": null,
@@ -1928,11 +1964,23 @@
   {
    "date": "2026-10-15",
    "t": "19.30",
+   "key": "core ppi yoy",
+   "e": "Core PPI y/y",
+   "r": "Sep",
+   "i": "lo",
+   "p": "4,6%",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-10-15",
+   "t": "20.30",
    "key": "retail sales mom",
    "e": "Retail Sales m/m",
    "r": "Sep",
    "i": "md",
-   "p": "—",
+   "p": "1,2%",
    "c": "—",
    "a": null,
    "x": "?"
