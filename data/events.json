@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-18T21:22+07:00",
+ "updated": "2026-09-20T02:20+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -1350,6 +1350,18 @@
    "est": true
   },
   {
+   "date": "2026-08-20",
+   "t": "19.30",
+   "key": "initial jobless claims",
+   "e": "Klaim Pengangguran Awal",
+   "r": "pekan 15 Agu",
+   "i": "md",
+   "p": "212K",
+   "c": "210K",
+   "a": "206K",
+   "x": "up"
+  },
+  {
    "date": "2026-08-26",
    "t": "19.30",
    "key": "gdp growth rate qoq 2nd est",
@@ -1372,6 +1384,42 @@
    "c": "3,0%",
    "a": "3,7%",
    "x": "dn"
+  },
+  {
+   "date": "2026-08-26",
+   "t": "19.30",
+   "key": "core pce price index mom",
+   "e": "Core PCE m/m",
+   "r": "Jul",
+   "i": "hi",
+   "p": "0,1%",
+   "c": "0,2%",
+   "a": "0,2%",
+   "x": "nt"
+  },
+  {
+   "date": "2026-08-26",
+   "t": "19.30",
+   "key": "core pce price index yoy",
+   "e": "Core PCE y/y",
+   "r": "Jul",
+   "i": "hi",
+   "p": "3,3%",
+   "c": "3,3%",
+   "a": "3,3%",
+   "x": "nt"
+  },
+  {
+   "date": "2026-08-27",
+   "t": "19.30",
+   "key": "initial jobless claims",
+   "e": "Klaim Pengangguran Awal",
+   "r": "pekan 22 Agu",
+   "i": "md",
+   "p": "207K",
+   "c": "208K",
+   "a": "203K",
+   "x": "up"
   },
   {
    "date": "2026-08-28",
@@ -1422,6 +1470,18 @@
    "p": "44K",
    "c": "14K",
    "a": "38K",
+   "x": "dn"
+  },
+  {
+   "date": "2026-09-03",
+   "t": "19.30",
+   "key": "initial jobless claims",
+   "e": "Klaim Pengangguran Awal",
+   "r": "pekan 29 Agu",
+   "i": "md",
+   "p": "204K",
+   "c": "205K",
+   "a": "206K",
    "x": "dn"
   },
   {
