@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-21T20:44+07:00",
+ "updated": "2026-09-22T18:57+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -1727,7 +1727,7 @@
    "r": "pekan 19 Sep",
    "i": "md",
    "p": "196K",
-   "c": "203K",
+   "c": "201K",
    "a": null,
    "x": "?"
   },
