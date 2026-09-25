@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-25T19:53+07:00",
+ "updated": "2026-09-26T00:49+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -1739,7 +1739,7 @@
    "r": "Agu",
    "i": "md",
    "p": "7,27 jt",
-   "c": "7,20 jt",
+   "c": "7,23 jt",
    "a": null,
    "x": "?"
   },
@@ -1751,7 +1751,7 @@
    "r": "Sep",
    "i": "md",
    "p": "38K",
-   "c": "75K",
+   "c": "70K",
    "a": null,
    "x": "?"
   },
@@ -1811,7 +1811,7 @@
    "r": "pekan 26 Sep",
    "i": "md",
    "p": "197K",
-   "c": "—",
+   "c": "199K",
    "a": null,
    "x": "?"
   },
@@ -1920,7 +1920,7 @@
    "e": "Sentimen Michigan",
    "r": "Okt awal",
    "i": "lo",
-   "p": "—",
+   "p": "48,1",
    "c": "—",
    "a": null,
    "x": "?"
