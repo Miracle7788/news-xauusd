@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T15:25+07:00",
+ "updated": "2026-09-29T15:41+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -1739,7 +1739,7 @@
    "r": "Agu",
    "i": "md",
    "p": "7,27 jt",
-   "c": "7,24 jt",
+   "c": "7,23 jt",
    "a": null,
    "x": "?"
   },
