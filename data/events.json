@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T22:06+07:00",
+ "updated": "2026-09-30T02:59+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -1751,7 +1751,7 @@
    "r": "Sep",
    "i": "md",
    "p": "38K",
-   "c": "72K",
+   "c": "70K",
    "a": null,
    "x": "?"
   },
@@ -1763,7 +1763,7 @@
    "r": "Agu",
    "i": "hi",
    "p": "3,3%",
-   "c": "3,4%",
+   "c": "3,3%",
    "a": null,
    "x": "?"
   },
@@ -1823,7 +1823,7 @@
    "r": "Sep",
    "i": "md",
    "p": "54,6",
-   "c": "54,9",
+   "c": "55",
    "a": null,
    "x": "?"
   },
@@ -1835,7 +1835,7 @@
    "r": "Sep",
    "i": "hi",
    "p": "162K",
-   "c": "84K",
+   "c": "90K",
    "a": null,
    "x": "?",
    "note": "konsensus jauh lebih tinggi dari biasanya · ruang kejutan ke atas menyempit",
