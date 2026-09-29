@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T15:41+07:00",
+ "updated": "2026-09-29T22:06+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -1738,10 +1738,10 @@
    "e": "JOLTS Lowongan Kerja",
    "r": "Agu",
    "i": "md",
-   "p": "7,27 jt",
+   "p": "7,33 jt",
    "c": "7,23 jt",
-   "a": null,
-   "x": "?"
+   "a": "7,08 jt",
+   "x": "up"
   },
   {
    "date": "2026-09-30",
