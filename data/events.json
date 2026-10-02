@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T01:48+07:00",
+ "updated": "2026-10-02T22:31+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -1834,10 +1834,10 @@
    "e": "Non-Farm Payrolls",
    "r": "Sep",
    "i": "hi",
-   "p": "162K",
+   "p": "133K",
    "c": "90K",
-   "a": null,
-   "x": "?",
+   "a": "29K",
+   "x": "up",
    "note": "konsensus jauh lebih tinggi dari biasanya · ruang kejutan ke atas menyempit",
    "big": true
   },
@@ -1850,8 +1850,8 @@
    "i": "hi",
    "p": "4,1%",
    "c": "4,1%",
-   "a": null,
-   "x": "?"
+   "a": "4,2%",
+   "x": "up"
   },
   {
    "date": "2026-10-02",
@@ -1862,8 +1862,8 @@
    "i": "md",
    "p": "0,3%",
    "c": "0,3%",
-   "a": null,
-   "x": "?"
+   "a": "0,1%",
+   "x": "up"
   },
   {
    "date": "2026-10-02",
@@ -1874,8 +1874,8 @@
    "i": "md",
    "p": "3,1%",
    "c": "3,2%",
-   "a": null,
-   "x": "?"
+   "a": "3%",
+   "x": "up"
   },
   {
    "date": "2026-10-05",
@@ -1885,7 +1885,7 @@
    "r": "Sep",
    "i": "md",
    "p": "55,4",
-   "c": "—",
+   "c": "55,7",
    "a": null,
    "x": "?"
   },
@@ -1909,7 +1909,7 @@
    "r": "pekan 3 Okt",
    "i": "md",
    "p": "197K",
-   "c": "—",
+   "c": "195K",
    "a": null,
    "x": "?"
   },
@@ -1921,7 +1921,7 @@
    "r": "Okt awal",
    "i": "lo",
    "p": "48,1",
-   "c": "—",
+   "c": "48,1",
    "a": null,
    "x": "?"
   },
