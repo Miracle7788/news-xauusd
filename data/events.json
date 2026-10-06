@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-05T23:25+07:00",
+ "updated": "2026-10-06T09:45+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -2138,6 +2138,18 @@
    "r": "Okt",
    "i": "md",
    "p": "54,5",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-03",
+   "t": "22.00",
+   "key": "jolts job openings",
+   "e": "JOLTS Lowongan Kerja",
+   "r": "Sep",
+   "i": "md",
+   "p": "7,08 jt",
    "c": "—",
    "a": null,
    "x": "?"
