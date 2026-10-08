@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T07:13+07:00",
+ "updated": "2026-10-08T20:41+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -1908,10 +1908,10 @@
    "e": "Klaim Pengangguran Awal",
    "r": "pekan 3 Okt",
    "i": "md",
-   "p": "197K",
+   "p": "199K",
    "c": "200K",
-   "a": null,
-   "x": "?"
+   "a": "197K",
+   "x": "up"
   },
   {
    "date": "2026-10-09",
@@ -2016,7 +2016,7 @@
    "e": "Klaim Pengangguran Awal",
    "r": "pekan 10 Okt",
    "i": "md",
-   "p": "—",
+   "p": "197K",
    "c": "—",
    "a": null,
    "x": "?"
