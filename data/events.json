@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T20:41+07:00",
+ "updated": "2026-10-09T12:16+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -2185,6 +2185,66 @@
    "e": "Klaim Pengangguran Awal",
    "r": "pekan 31 Okt",
    "i": "md",
+   "p": "—",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-06",
+   "t": "20.30",
+   "key": "non farm payrolls",
+   "e": "Non-Farm Payrolls",
+   "r": "Okt",
+   "i": "hi",
+   "p": "29K",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-06",
+   "t": "20.30",
+   "key": "unemployment rate",
+   "e": "Tingkat Pengangguran",
+   "r": "Okt",
+   "i": "hi",
+   "p": "4,2%",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-06",
+   "t": "20.30",
+   "key": "average hourly earnings mom",
+   "e": "Upah per Jam m/m",
+   "r": "Okt",
+   "i": "md",
+   "p": "0,1%",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-06",
+   "t": "20.30",
+   "key": "average hourly earnings yoy",
+   "e": "Upah per Jam y/y",
+   "r": "Okt",
+   "i": "md",
+   "p": "3%",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-06",
+   "t": "22.00",
+   "key": "michigan consumer sentiment prel",
+   "e": "Sentimen Michigan",
+   "r": "Nov awal",
+   "i": "lo",
    "p": "—",
    "c": "—",
    "a": null,
