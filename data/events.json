@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-13T02:14+07:00",
+ "updated": "2026-10-13T08:24+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -2245,6 +2245,54 @@
    "e": "Sentimen Michigan",
    "r": "Nov awal",
    "i": "lo",
+   "p": "—",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-10",
+   "t": "20.30",
+   "key": "core inflation rate mom",
+   "e": "Core CPI m/m",
+   "r": "Okt",
+   "i": "hi",
+   "p": "—",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-10",
+   "t": "20.30",
+   "key": "core inflation rate yoy",
+   "e": "Core CPI y/y",
+   "r": "Okt",
+   "i": "hi",
+   "p": "—",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-10",
+   "t": "20.30",
+   "key": "inflation rate mom",
+   "e": "CPI m/m",
+   "r": "Okt",
+   "i": "hi",
+   "p": "—",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-10",
+   "t": "20.30",
+   "key": "inflation rate yoy",
+   "e": "CPI y/y",
+   "r": "Okt",
+   "i": "hi",
    "p": "—",
    "c": "—",
    "a": null,
