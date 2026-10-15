@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14T22:24+07:00",
+ "updated": "2026-10-15T07:55+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -2294,6 +2294,18 @@
    "r": "Okt",
    "i": "hi",
    "p": "3,7%",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-12",
+   "t": "20.30",
+   "key": "initial jobless claims",
+   "e": "Klaim Pengangguran Awal",
+   "r": "pekan 7 Nov",
+   "i": "md",
+   "p": "—",
    "c": "—",
    "a": null,
    "x": "?"
