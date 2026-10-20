@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T17:06+07:00",
+ "updated": "2026-10-20T11:03+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -2354,6 +2354,18 @@
    "r": "Okt",
    "i": "md",
    "p": "6,3%",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-17",
+   "t": "20.30",
+   "key": "retail sales mom",
+   "e": "Retail Sales m/m",
+   "r": "Okt",
+   "i": "md",
+   "p": "0,8%",
    "c": "—",
    "a": null,
    "x": "?"
