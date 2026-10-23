@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T19:09+07:00",
+ "updated": "2026-10-24T00:09+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -2245,7 +2245,7 @@
    "e": "Sentimen Michigan",
    "r": "Nov awal",
    "i": "lo",
-   "p": "—",
+   "p": "48,0",
    "c": "—",
    "a": null,
    "x": "?"
