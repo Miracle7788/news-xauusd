@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T23:41+07:00",
+ "updated": "2026-10-28T07:25+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -2389,6 +2389,54 @@
    "e": "Klaim Pengangguran Awal",
    "r": "pekan 14 Nov",
    "i": "md",
+   "p": "—",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-25",
+   "t": "20.30",
+   "key": "core pce price index mom",
+   "e": "Core PCE m/m",
+   "r": "Okt",
+   "i": "hi",
+   "p": "—",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-25",
+   "t": "20.30",
+   "key": "gdp growth rate qoq 2nd est",
+   "e": "GDP q/q · Q3 revisi",
+   "r": "Q3",
+   "i": "lo",
+   "p": "2,2%",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-25",
+   "t": "20.30",
+   "key": "pce price index yoy",
+   "e": "PCE Price Index y/y",
+   "r": "Okt",
+   "i": "md",
+   "p": "—",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-11-25",
+   "t": "20.30",
+   "key": "core pce price index yoy",
+   "e": "Core PCE y/y",
+   "r": "Okt",
+   "i": "hi",
    "p": "—",
    "c": "—",
    "a": null,
