@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29T22:56+07:00",
+ "updated": "2026-10-30T20:54+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -2132,7 +2132,7 @@
   },
   {
    "date": "2026-11-02",
-   "t": "21.00",
+   "t": "22.00",
    "key": "ism manufacturing pmi",
    "e": "ISM Manufaktur",
    "r": "Okt",
@@ -2168,7 +2168,7 @@
   },
   {
    "date": "2026-11-04",
-   "t": "21.00",
+   "t": "22.00",
    "key": "ism services pmi",
    "e": "ISM Jasa",
    "r": "Okt",
@@ -2414,7 +2414,7 @@
    "r": "Q3",
    "i": "lo",
    "p": "2,2%",
-   "c": "—",
+   "c": "3,4%",
    "a": null,
    "x": "?"
   },
