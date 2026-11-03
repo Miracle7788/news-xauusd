@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T16:54+07:00",
+ "updated": "2026-11-04T00:37+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -2149,10 +2149,10 @@
    "e": "JOLTS Lowongan Kerja",
    "r": "Sep",
    "i": "md",
-   "p": "7,08 jt",
+   "p": "7,19 jt",
    "c": "7,10 jt",
-   "a": null,
-   "x": "?"
+   "a": "7,52 jt",
+   "x": "dn"
   },
   {
    "date": "2026-11-04",
@@ -2443,6 +2443,18 @@
    "x": "?"
   },
   {
+   "date": "2026-11-25",
+   "t": "20.30",
+   "key": "initial jobless claims",
+   "e": "Klaim Pengangguran Awal",
+   "r": "pekan 21 Nov",
+   "i": "md",
+   "p": "—",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
    "date": "2026-11-26",
    "t": "—",
    "key": "holiday",
@@ -2453,18 +2465,6 @@
    "c": "—",
    "a": null,
    "x": "nt"
-  },
-  {
-   "date": "2026-11-26",
-   "t": "20.30",
-   "key": "initial jobless claims",
-   "e": "Klaim Pengangguran Awal",
-   "r": "pekan 21 Nov",
-   "i": "md",
-   "p": "—",
-   "c": "—",
-   "a": null,
-   "x": "?"
   },
   {
    "date": "2026-12-01",
@@ -2485,7 +2485,7 @@
    "e": "JOLTS Lowongan Kerja",
    "r": "Okt",
    "i": "md",
-   "p": "—",
+   "p": "7,52 jt",
    "c": "—",
    "a": null,
    "x": "?"
