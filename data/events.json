@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T03:03+07:00",
+ "updated": "2026-11-03T09:20+07:00",
  "source": "MQL5 + TradingEconomics; jadwal OMB/BLS/BEA/Fed",
  "events": [
   {
@@ -2460,6 +2460,30 @@
    "key": "initial jobless claims",
    "e": "Klaim Pengangguran Awal",
    "r": "pekan 21 Nov",
+   "i": "md",
+   "p": "—",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-12-01",
+   "t": "22.00",
+   "key": "ism manufacturing pmi",
+   "e": "ISM Manufaktur",
+   "r": "Nov",
+   "i": "md",
+   "p": "55,5",
+   "c": "—",
+   "a": null,
+   "x": "?"
+  },
+  {
+   "date": "2026-12-01",
+   "t": "22.00",
+   "key": "jolts job openings",
+   "e": "JOLTS Lowongan Kerja",
+   "r": "Okt",
    "i": "md",
    "p": "—",
    "c": "—",
